@@ -1,0 +1,222 @@
+{
+  "info": {
+    "name": "Bridge API (Bridge Data Output)",
+    "description": "Bridge Interactive (a Zillow Group company) Bridge API: proprietary Bridge Web API (listings, agents, offices, openhouses) and RESO Web API (OData) for Property, Member, Office, OpenHouse, and Media. Bearer server token auth.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.bridgedataoutput.com/api/v2"
+    },
+    {
+      "key": "dataset_id",
+      "value": "test"
+    },
+    {
+      "key": "bearerToken",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Bridge Web API",
+      "item": [
+        {
+          "name": "Query listings for a dataset",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Accept", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/{{dataset_id}}/listings?limit=10",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "{{dataset_id}}", "listings" ],
+              "query": [
+                { "key": "limit", "value": "10" },
+                { "key": "fields", "value": "", "disabled": true },
+                { "key": "sortBy", "value": "", "disabled": true },
+                { "key": "near", "value": "", "disabled": true }
+              ]
+            },
+            "description": "Returns normalized listing/property records. Supports fields, sortBy, order, near, limit, offset, and per-field filters (e.g. ListPrice.gt)."
+          }
+        },
+        {
+          "name": "Get a single listing by id",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Accept", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/{{dataset_id}}/listings/:id",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "{{dataset_id}}", "listings", ":id" ],
+              "variable": [ { "key": "id", "value": "" } ]
+            },
+            "description": "Returns a single listing record by id."
+          }
+        },
+        {
+          "name": "Query agents for a dataset",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Accept", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/{{dataset_id}}/agents?limit=10",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "{{dataset_id}}", "agents" ],
+              "query": [ { "key": "limit", "value": "10" } ]
+            },
+            "description": "Returns agent (RESO Member) records. Supports filtering, fields, sortBy, order, limit, offset."
+          }
+        },
+        {
+          "name": "Query offices for a dataset",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Accept", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/{{dataset_id}}/offices?limit=10",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "{{dataset_id}}", "offices" ],
+              "query": [ { "key": "limit", "value": "10" } ]
+            },
+            "description": "Returns brokerage office records. Filterable by location (e.g. state) and other fields."
+          }
+        },
+        {
+          "name": "Query open houses for a dataset",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Accept", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/{{dataset_id}}/openhouses?limit=10",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "{{dataset_id}}", "openhouses" ],
+              "query": [ { "key": "limit", "value": "10" } ]
+            },
+            "description": "Returns scheduled open house records, including date, time window, and associated listing."
+          }
+        }
+      ]
+    },
+    {
+      "name": "RESO Web API",
+      "item": [
+        {
+          "name": "RESO Web API metadata document",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Accept", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/OData/{{dataset_id}}/$metadata",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "OData", "{{dataset_id}}", "$metadata" ]
+            },
+            "description": "Returns the RESO Web API (OData) metadata document describing resources and fields."
+          }
+        },
+        {
+          "name": "RESO Property collection (OData)",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Accept", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/OData/{{dataset_id}}/Property?$top=200&$orderby=ListPrice desc",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "OData", "{{dataset_id}}", "Property" ],
+              "query": [
+                { "key": "$top", "value": "200" },
+                { "key": "$orderby", "value": "ListPrice desc" },
+                { "key": "$filter", "value": "", "disabled": true },
+                { "key": "$select", "value": "", "disabled": true },
+                { "key": "$expand", "value": "", "disabled": true }
+              ]
+            },
+            "description": "Returns RESO Property records. Supports $filter, $select, $top, $skip, $orderby, and $expand (e.g. Media, Member, Office)."
+          }
+        },
+        {
+          "name": "RESO Property replication endpoint",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Accept", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/OData/{{dataset_id}}/Property/replication",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "OData", "{{dataset_id}}", "Property", "replication" ]
+            },
+            "description": "Replication endpoint for extracting more than 10,000 Property records for full dataset synchronization."
+          }
+        },
+        {
+          "name": "RESO Member collection (OData)",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Accept", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/OData/{{dataset_id}}/Member?$top=200",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "OData", "{{dataset_id}}", "Member" ],
+              "query": [ { "key": "$top", "value": "200" } ]
+            },
+            "description": "Returns RESO Member (agent) records."
+          }
+        },
+        {
+          "name": "RESO Office collection (OData)",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Accept", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/OData/{{dataset_id}}/Office?$top=200",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "OData", "{{dataset_id}}", "Office" ],
+              "query": [ { "key": "$top", "value": "200" } ]
+            },
+            "description": "Returns RESO Office (brokerage) records."
+          }
+        },
+        {
+          "name": "RESO OpenHouse collection (OData)",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Accept", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/OData/{{dataset_id}}/OpenHouse?$top=200",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "OData", "{{dataset_id}}", "OpenHouse" ],
+              "query": [ { "key": "$top", "value": "200" } ]
+            },
+            "description": "Returns RESO OpenHouse records."
+          }
+        },
+        {
+          "name": "RESO Media collection (OData)",
+          "request": {
+            "method": "GET",
+            "header": [ { "key": "Accept", "value": "application/json" } ],
+            "url": {
+              "raw": "{{baseUrl}}/OData/{{dataset_id}}/Media?$top=200",
+              "host": [ "{{baseUrl}}" ],
+              "path": [ "OData", "{{dataset_id}}", "Media" ],
+              "query": [ { "key": "$top", "value": "200" } ]
+            },
+            "description": "Returns RESO Media records such as listing photos and virtual tours."
+          }
+        }
+      ]
+    }
+  ]
+}

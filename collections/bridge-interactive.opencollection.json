@@ -1,0 +1,163 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bridge API (Bridge Data Output)",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Bridge Web API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query listings for a dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/{{dataset_id}}/listings?access_token={{bearerToken}}&limit=10"
+          },
+          "docs": "Returns normalized listing/property records for the dataset. Supports fields, sortBy, order, near, limit, offset, and per-field filter operators."
+        },
+        {
+          "info": {
+            "name": "Get a single listing by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/{{dataset_id}}/listings/{{id}}?access_token={{bearerToken}}"
+          },
+          "docs": "Returns a single listing record by id."
+        },
+        {
+          "info": {
+            "name": "Query agents for a dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/{{dataset_id}}/agents?access_token={{bearerToken}}&limit=10"
+          },
+          "docs": "Returns agent (RESO Member) records. Supports filtering, fields, sortBy, order, limit, offset."
+        },
+        {
+          "info": {
+            "name": "Query offices for a dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/{{dataset_id}}/offices?access_token={{bearerToken}}&limit=10"
+          },
+          "docs": "Returns brokerage office records. Supports filtering by location and other fields."
+        },
+        {
+          "info": {
+            "name": "Query open houses for a dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/{{dataset_id}}/openhouses?access_token={{bearerToken}}&limit=10"
+          },
+          "docs": "Returns scheduled open house records, including date, time window, and associated listing."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "RESO Web API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "RESO Web API metadata document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/{{dataset_id}}/$metadata?access_token={{bearerToken}}"
+          },
+          "docs": "Returns the RESO Web API (OData) metadata document describing resources and fields."
+        },
+        {
+          "info": {
+            "name": "RESO Property collection (OData)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/{{dataset_id}}/Property?access_token={{bearerToken}}&$top=200&$orderby=ListPrice desc"
+          },
+          "docs": "Returns RESO Property records. Supports $filter, $select, $top, $skip, $orderby, and $expand."
+        },
+        {
+          "info": {
+            "name": "RESO Property replication endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/{{dataset_id}}/Property/replication?access_token={{bearerToken}}"
+          },
+          "docs": "Replication endpoint for extracting more than 10,000 Property records for full dataset synchronization."
+        },
+        {
+          "info": {
+            "name": "RESO Member collection (OData)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/{{dataset_id}}/Member?access_token={{bearerToken}}&$top=200"
+          },
+          "docs": "Returns RESO Member (agent) records."
+        },
+        {
+          "info": {
+            "name": "RESO Office collection (OData)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/{{dataset_id}}/Office?access_token={{bearerToken}}&$top=200"
+          },
+          "docs": "Returns RESO Office (brokerage) records."
+        },
+        {
+          "info": {
+            "name": "RESO OpenHouse collection (OData)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/{{dataset_id}}/OpenHouse?access_token={{bearerToken}}&$top=200"
+          },
+          "docs": "Returns RESO OpenHouse records."
+        },
+        {
+          "info": {
+            "name": "RESO Media collection (OData)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/{{dataset_id}}/Media?access_token={{bearerToken}}&$top=200"
+          },
+          "docs": "Returns RESO Media records such as listing photos and virtual tours."
+        }
+      ]
+    }
+  ]
+}

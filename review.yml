@@ -1,0 +1,72 @@
+aid: bridge-interactive
+name: Bridge Interactive
+review:
+  question: Does Bridge Interactive expose a documented public WebSocket API?
+  answer: false
+  date: '2026-06-21'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was created. The Bridge API is a request/response
+    HTTPS REST platform with no documented streaming, Server-Sent Events,
+    or WebSocket surface. Bulk/near-real-time consumption is handled by
+    polling the REST resources and the Property replication endpoint, not
+    by an event-driven transport.
+findings:
+  summary: |
+    Bridge Interactive (Bridge Data Output) does not publish a documented
+    public WebSocket API. The platform exposes two HTTPS REST surfaces under
+    https://api.bridgedataoutput.com/api/v2: a proprietary "Bridge Web API"
+    (listings, agents, offices, openhouses) and a RESO Data Dictionary-aligned
+    "RESO Web API" using OData (Property, Member, Office, OpenHouse, Media).
+    Authentication is a Bearer server access token (also accepted as an
+    access_token query parameter), issued from the Bridge Dashboard. Large
+    extracts use a REST replication endpoint rather than streaming. No
+    realtime, bidirectional, ws:// or wss:// endpoint is documented.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.bridgedataoutput.com/api/v2
+      documented: true
+    - protocol: OData
+      scheme: https
+      note: RESO Web API OData query surface served over the same REST base URL.
+      documented: true
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented in the Bridge platform docs, API reference, or RESO Web API explorer as of the review date.
+  endpointsConfirmedRest:
+    - GET https://api.bridgedataoutput.com/api/v2/{dataset_id}/listings
+    - GET https://api.bridgedataoutput.com/api/v2/{dataset_id}/listings/{id}
+    - GET https://api.bridgedataoutput.com/api/v2/{dataset_id}/agents
+    - GET https://api.bridgedataoutput.com/api/v2/{dataset_id}/offices
+    - GET https://api.bridgedataoutput.com/api/v2/{dataset_id}/openhouses
+    - GET https://api.bridgedataoutput.com/api/v2/OData/{dataset_id}/$metadata
+    - GET https://api.bridgedataoutput.com/api/v2/OData/{dataset_id}/Property
+    - GET https://api.bridgedataoutput.com/api/v2/OData/{dataset_id}/Property/replication
+    - GET https://api.bridgedataoutput.com/api/v2/OData/{dataset_id}/Member
+    - GET https://api.bridgedataoutput.com/api/v2/OData/{dataset_id}/Office
+    - GET https://api.bridgedataoutput.com/api/v2/OData/{dataset_id}/OpenHouse
+    - GET https://api.bridgedataoutput.com/api/v2/OData/{dataset_id}/Media
+sources:
+  - url: https://bridgedataoutput.com/docs/platform/
+    type: Documentation
+    note: Platform docs describe REST Bridge Web API and RESO Web API; no WebSocket mentioned.
+  - url: https://bridgedataoutput.com/docs/platform/API/bridge
+    type: APIReference
+    note: Bridge Web API endpoints (listings, agents, offices, openhouses) are HTTPS REST with access_token auth.
+  - url: https://bridgedataoutput.com/docs/explorer/reso-web-api
+    type: Documentation
+    note: RESO Web API is OData over HTTPS (Property/Member/Office/OpenHouse/Media); no streaming transport.
+  - url: https://www.bridgeinteractive.com/developers/bridge-api/
+    type: Documentation
+    note: Describes normalized RESO data over a RESTful API; free if qualified, dataset access by approval.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket or SSE protocol surface exists, so no AsyncAPI document was
+    authored. The apis.yml and OpenAPI artifacts document the two REST
+    surfaces (Bridge Web API and RESO Web API / OData) with Bearer auth and
+    the dataset-scoped, replication-capable resource endpoints.

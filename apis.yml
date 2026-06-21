@@ -1,0 +1,138 @@
+aid: bridge-interactive
+url: https://raw.githubusercontent.com/api-evangelist/bridge-interactive/refs/heads/main/apis.yml
+name: Bridge Interactive
+kind: company
+description: Bridge Interactive (a Zillow Group company) is a real-estate data-access
+  platform that normalizes MLS listing data to RESO standards and serves it through
+  the Bridge API. The Bridge Data Output platform exposes a proprietary RESTful Bridge
+  Web API and a RESO-compliant RESO Web API (OData) for properties, members, offices,
+  open houses, and media, all secured with a Bearer server token.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Real Estate
+- MLS
+- RESO
+- Listings
+- Property Data
+created: '2026-06-21'
+modified: '2026-06-21'
+specificationVersion: '0.19'
+apis:
+- aid: bridge-interactive:listings-properties
+  name: Bridge Listings and Properties API
+  tags:
+  - Listings
+  - Property
+  - Real Estate
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
+  baseURL: https://api.bridgedataoutput.com/api/v2
+  properties:
+  - url: https://bridgedataoutput.com/docs/platform/API/bridge
+    type: Documentation
+  - url: https://bridgedataoutput.com/docs/platform/API
+    type: APIReference
+  - url: openapi/bridge-interactive-openapi.yml
+    type: OpenAPI
+  description: Query normalized real-estate listings and property records for a dataset
+    via the proprietary Bridge Web API, with field selection, sorting, near (geo)
+    search, and per-field filter operators (eq, ne, gt, lt, gte, lte).
+- aid: bridge-interactive:agents
+  name: Bridge Agents API
+  tags:
+  - Agents
+  - Members
+  - Real Estate
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
+  baseURL: https://api.bridgedataoutput.com/api/v2
+  properties:
+  - url: https://bridgedataoutput.com/docs/platform/API/bridge
+    type: Documentation
+  - url: openapi/bridge-interactive-openapi.yml
+    type: OpenAPI
+  description: Retrieve agent (RESO Member) records for a dataset, including name,
+    contact, license, and office association, with filtering and field selection.
+- aid: bridge-interactive:offices
+  name: Bridge Offices API
+  tags:
+  - Offices
+  - Brokerages
+  - Real Estate
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
+  baseURL: https://api.bridgedataoutput.com/api/v2
+  properties:
+  - url: https://bridgedataoutput.com/docs/platform/API/bridge
+    type: Documentation
+  - url: openapi/bridge-interactive-openapi.yml
+    type: OpenAPI
+  description: Retrieve brokerage office (RESO Office) records for a dataset, including
+    office name, address, and contact, filterable by location and other fields.
+- aid: bridge-interactive:open-houses
+  name: Bridge Open Houses API
+  tags:
+  - Open Houses
+  - Events
+  - Real Estate
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
+  baseURL: https://api.bridgedataoutput.com/api/v2
+  properties:
+  - url: https://bridgedataoutput.com/docs/platform/API/bridge
+    type: Documentation
+  - url: openapi/bridge-interactive-openapi.yml
+    type: OpenAPI
+  description: Retrieve scheduled open house (RESO OpenHouse) records for a dataset,
+    including date, time window, and the associated listing.
+- aid: bridge-interactive:media
+  name: Bridge Media API
+  tags:
+  - Media
+  - Photos
+  - Real Estate
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://bridgedataoutput.com/docs/explorer/reso-web-api
+  baseURL: https://api.bridgedataoutput.com/api/v2
+  properties:
+  - url: https://bridgedataoutput.com/docs/explorer/reso-web-api
+    type: Documentation
+  - url: openapi/bridge-interactive-openapi.yml
+    type: OpenAPI
+  description: Retrieve listing media (RESO Media) records such as photos and virtual
+    tours, available as a RESO resource and via $expand on Property.
+- aid: bridge-interactive:reso-web-api
+  name: Bridge RESO Web API
+  tags:
+  - RESO
+  - OData
+  - Web API
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://bridgedataoutput.com/docs/explorer/reso-web-api
+  baseURL: https://api.bridgedataoutput.com/api/v2
+  properties:
+  - url: https://bridgedataoutput.com/docs/explorer/reso-web-api
+    type: Documentation
+  - url: https://bridgedataoutput.com/docs/platform/API
+    type: APIReference
+  - url: openapi/bridge-interactive-openapi.yml
+    type: OpenAPI
+  description: RESO Data Dictionary-aligned OData endpoints (Property, Member, Office,
+    OpenHouse, Media) with $filter, $select, $top, $skip, $orderby, $expand, a
+    $metadata service document, and a replication endpoint for full extracts.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/bridge-interactive
+- type: Website
+  url: https://www.bridgeinteractive.com
+- type: Documentation
+  url: https://bridgedataoutput.com/docs/platform/
+- type: Plans
+  url: plans/bridge-interactive-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/bridge-interactive-rate-limits.yml
+- type: FinOps
+  url: finops/bridge-interactive-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
