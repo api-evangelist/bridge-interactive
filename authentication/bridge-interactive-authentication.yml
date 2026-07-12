@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/bridge-interactive-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: 'Server access token issued from the Bridge Dashboard under Data Access > API
+    Access Tokens. Sent as "Authorization: Bearer <token>" or as an access_token query parameter.'
+  sources:
+  - openapi/bridge-interactive-openapi.yml

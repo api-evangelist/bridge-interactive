@@ -121,6 +121,10 @@ apis:
     OpenHouse, Media) with $filter, $select, $top, $skip, $orderby, $expand, a
     $metadata service document, and a replication endpoint for full extracts.
 common:
+- type: DomainSecurity
+  url: security/bridge-interactive-domain-security.yml
+- type: Authentication
+  url: authentication/bridge-interactive-authentication.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/bridge-interactive
 - type: Website
