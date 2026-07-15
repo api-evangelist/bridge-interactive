@@ -121,6 +121,8 @@ apis:
     OpenHouse, Media) with $filter, $select, $top, $skip, $orderby, $expand, a
     $metadata service document, and a replication endpoint for full extracts.
 common:
+- type: AgenticAccess
+  url: agentic-access/bridge-interactive-agentic-access.yml
 - type: DomainSecurity
   url: security/bridge-interactive-domain-security.yml
 - type: Authentication
