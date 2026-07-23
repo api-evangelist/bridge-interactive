@@ -1,0 +1,187 @@
+openapi: 3.0.1
+info:
+  title: Bridge API (Bridge Data Output) Agents Listings API
+  description: The Bridge API from Bridge Interactive (a Zillow Group company) provides normalized real-estate data access. It exposes a proprietary RESTful "Bridge Web API" (listings, agents, offices, open houses) and a RESO Data Dictionary-aligned "RESO Web API" (OData) for Property, Member, Office, OpenHouse, and Media resources. All requests are scoped to a dataset_id and authenticated with a Bearer server access token (also accepted as an access_token query parameter).
+  termsOfService: https://www.bridgeinteractive.com/terms-of-use/
+  contact:
+    name: Bridge Interactive Support
+    url: https://bridgedataoutput.com/docs/platform/
+  version: v2
+servers:
+- url: https://api.bridgedataoutput.com/api/v2
+  description: Bridge API v2 production
+security:
+- bearerAuth: []
+tags:
+- name: Listings
+paths:
+  /{dataset_id}/listings:
+    get:
+      operationId: getListings
+      tags:
+      - Listings
+      summary: Query listings for a dataset
+      description: Returns normalized listing/property records for the given dataset. Supports field selection, sorting, geo (near) search, pagination, and per-field filter operators such as ListPrice.gt or City.eq.
+      parameters:
+      - $ref: '#/components/parameters/datasetId'
+      - $ref: '#/components/parameters/accessToken'
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/sortBy'
+      - $ref: '#/components/parameters/order'
+      - $ref: '#/components/parameters/near'
+      responses:
+        '200':
+          description: A bundle of listing records.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bundle'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /{dataset_id}/listings/{id}:
+    get:
+      operationId: getListing
+      tags:
+      - Listings
+      summary: Get a single listing by id
+      parameters:
+      - $ref: '#/components/parameters/datasetId'
+      - $ref: '#/components/parameters/resourceId'
+      - $ref: '#/components/parameters/accessToken'
+      - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: A single listing record.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleResource'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  parameters:
+    sortBy:
+      name: sortBy
+      in: query
+      required: false
+      description: Field name to sort results by.
+      schema:
+        type: string
+    near:
+      name: near
+      in: query
+      required: false
+      description: Geographic point as "longitude,latitude" used for radius/near search.
+      schema:
+        type: string
+    order:
+      name: order
+      in: query
+      required: false
+      description: Sort order.
+      schema:
+        type: string
+        enum:
+        - asc
+        - desc
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of records to return per page.
+      schema:
+        type: integer
+        default: 10
+    datasetId:
+      name: dataset_id
+      in: path
+      required: true
+      description: The dataset identifier the request is scoped to.
+      schema:
+        type: string
+    resourceId:
+      name: id
+      in: path
+      required: true
+      description: The unique identifier of a single resource record.
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to include in each record.
+      schema:
+        type: string
+    accessToken:
+      name: access_token
+      in: query
+      required: false
+      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of records to skip for pagination.
+      schema:
+        type: integer
+  schemas:
+    SingleResource:
+      type: object
+      description: Bridge Web API response envelope for a single record.
+      properties:
+        success:
+          type: boolean
+        status:
+          type: integer
+        bundle:
+          type: object
+          additionalProperties: true
+    Bundle:
+      type: object
+      description: Bridge Web API response envelope for a collection of records.
+      properties:
+        success:
+          type: boolean
+        status:
+          type: integer
+        bundle:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        total:
+          type: integer
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        status:
+          type: integer
+        message:
+          type: string
+  responses:
+    TooManyRequests:
+      description: Rate limit exceeded.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Missing or invalid access token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Server access token issued from the Bridge Dashboard under Data Access > API Access Tokens. Sent as "Authorization: Bearer <token>" or as an access_token query parameter.'

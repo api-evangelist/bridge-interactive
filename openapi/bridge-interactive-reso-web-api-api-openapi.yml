@@ -1,0 +1,251 @@
+openapi: 3.0.1
+info:
+  title: Bridge API (Bridge Data Output) Agents RESO Web API API
+  description: The Bridge API from Bridge Interactive (a Zillow Group company) provides normalized real-estate data access. It exposes a proprietary RESTful "Bridge Web API" (listings, agents, offices, open houses) and a RESO Data Dictionary-aligned "RESO Web API" (OData) for Property, Member, Office, OpenHouse, and Media resources. All requests are scoped to a dataset_id and authenticated with a Bearer server access token (also accepted as an access_token query parameter).
+  termsOfService: https://www.bridgeinteractive.com/terms-of-use/
+  contact:
+    name: Bridge Interactive Support
+    url: https://bridgedataoutput.com/docs/platform/
+  version: v2
+servers:
+- url: https://api.bridgedataoutput.com/api/v2
+  description: Bridge API v2 production
+security:
+- bearerAuth: []
+tags:
+- name: RESO Web API
+paths:
+  /OData/{dataset_id}/$metadata:
+    get:
+      operationId: getResoMetadata
+      tags:
+      - RESO Web API
+      summary: RESO Web API metadata document
+      description: Returns the RESO Web API (OData) metadata document describing the available resources and fields for the dataset.
+      parameters:
+      - $ref: '#/components/parameters/datasetId'
+      - $ref: '#/components/parameters/accessToken'
+      responses:
+        '200':
+          description: OData $metadata (XML or JSON).
+  /OData/{dataset_id}/Property:
+    get:
+      operationId: getResoProperty
+      tags:
+      - RESO Web API
+      summary: RESO Property collection (OData)
+      description: Returns RESO Data Dictionary Property records. Supports $filter, $select, $top, $skip, $orderby, and $expand (e.g. Media, Member, Office). Feed types such as /idx may be appended in the path.
+      parameters:
+      - $ref: '#/components/parameters/datasetId'
+      - $ref: '#/components/parameters/accessToken'
+      - $ref: '#/components/parameters/odataFilter'
+      - $ref: '#/components/parameters/odataSelect'
+      - $ref: '#/components/parameters/odataTop'
+      - $ref: '#/components/parameters/odataSkip'
+      - $ref: '#/components/parameters/odataOrderby'
+      - $ref: '#/components/parameters/odataExpand'
+      responses:
+        '200':
+          description: An OData collection of Property entities.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /OData/{dataset_id}/Property/replication:
+    get:
+      operationId: getResoPropertyReplication
+      tags:
+      - RESO Web API
+      summary: RESO Property replication endpoint
+      description: Replication endpoint used to extract more than 10,000 Property records for full dataset synchronization.
+      parameters:
+      - $ref: '#/components/parameters/datasetId'
+      - $ref: '#/components/parameters/accessToken'
+      - $ref: '#/components/parameters/odataFilter'
+      - $ref: '#/components/parameters/odataSelect'
+      responses:
+        '200':
+          description: An OData collection of Property entities for replication.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+  /OData/{dataset_id}/Member:
+    get:
+      operationId: getResoMember
+      tags:
+      - RESO Web API
+      summary: RESO Member collection (OData)
+      parameters:
+      - $ref: '#/components/parameters/datasetId'
+      - $ref: '#/components/parameters/accessToken'
+      - $ref: '#/components/parameters/odataFilter'
+      - $ref: '#/components/parameters/odataSelect'
+      - $ref: '#/components/parameters/odataTop'
+      - $ref: '#/components/parameters/odataSkip'
+      - $ref: '#/components/parameters/odataOrderby'
+      responses:
+        '200':
+          description: An OData collection of Member entities.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+  /OData/{dataset_id}/Office:
+    get:
+      operationId: getResoOffice
+      tags:
+      - RESO Web API
+      summary: RESO Office collection (OData)
+      parameters:
+      - $ref: '#/components/parameters/datasetId'
+      - $ref: '#/components/parameters/accessToken'
+      - $ref: '#/components/parameters/odataFilter'
+      - $ref: '#/components/parameters/odataSelect'
+      - $ref: '#/components/parameters/odataTop'
+      - $ref: '#/components/parameters/odataSkip'
+      - $ref: '#/components/parameters/odataOrderby'
+      responses:
+        '200':
+          description: An OData collection of Office entities.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+  /OData/{dataset_id}/OpenHouse:
+    get:
+      operationId: getResoOpenHouse
+      tags:
+      - RESO Web API
+      summary: RESO OpenHouse collection (OData)
+      parameters:
+      - $ref: '#/components/parameters/datasetId'
+      - $ref: '#/components/parameters/accessToken'
+      - $ref: '#/components/parameters/odataFilter'
+      - $ref: '#/components/parameters/odataSelect'
+      - $ref: '#/components/parameters/odataTop'
+      - $ref: '#/components/parameters/odataSkip'
+      - $ref: '#/components/parameters/odataOrderby'
+      responses:
+        '200':
+          description: An OData collection of OpenHouse entities.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+  /OData/{dataset_id}/Media:
+    get:
+      operationId: getResoMedia
+      tags:
+      - RESO Web API
+      summary: RESO Media collection (OData)
+      parameters:
+      - $ref: '#/components/parameters/datasetId'
+      - $ref: '#/components/parameters/accessToken'
+      - $ref: '#/components/parameters/odataFilter'
+      - $ref: '#/components/parameters/odataSelect'
+      - $ref: '#/components/parameters/odataTop'
+      - $ref: '#/components/parameters/odataSkip'
+      - $ref: '#/components/parameters/odataOrderby'
+      responses:
+        '200':
+          description: An OData collection of Media entities.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ODataCollection'
+components:
+  parameters:
+    odataFilter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression (e.g. ListPrice gt 500000). Names are case sensitive.
+      schema:
+        type: string
+    datasetId:
+      name: dataset_id
+      in: path
+      required: true
+      description: The dataset identifier the request is scoped to.
+      schema:
+        type: string
+    odataOrderby:
+      name: $orderby
+      in: query
+      required: false
+      description: OData ordering expression (e.g. ListPrice desc).
+      schema:
+        type: string
+    odataTop:
+      name: $top
+      in: query
+      required: false
+      description: OData page size (v2) / collection size (v3).
+      schema:
+        type: integer
+    odataSkip:
+      name: $skip
+      in: query
+      required: false
+      description: OData number of records to skip.
+      schema:
+        type: integer
+    odataExpand:
+      name: $expand
+      in: query
+      required: false
+      description: OData related resources to embed (e.g. Media, Member, Office).
+      schema:
+        type: string
+    accessToken:
+      name: access_token
+      in: query
+      required: false
+      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
+      schema:
+        type: string
+    odataSelect:
+      name: $select
+      in: query
+      required: false
+      description: Comma-separated OData field selection.
+      schema:
+        type: string
+  responses:
+    Unauthorized:
+      description: Missing or invalid access token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    ODataCollection:
+      type: object
+      description: OData collection response for RESO Web API resources.
+      properties:
+        '@odata.context':
+          type: string
+        '@odata.nextLink':
+          type: string
+        value:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        status:
+          type: integer
+        message:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Server access token issued from the Bridge Dashboard under Data Access > API Access Tokens. Sent as "Authorization: Bearer <token>" or as an access_token query parameter.'
