@@ -1,0 +1,22 @@
+{
+  "provider": "bridge-interactive",
+  "sources": [
+    "bridge-interactive-agents-api-openapi.yml",
+    "bridge-interactive-listings-api-openapi.yml",
+    "bridge-interactive-offices-api-openapi.yml",
+    "bridge-interactive-open-houses-api-openapi.yml",
+    "bridge-interactive-reso-web-api-api-openapi.yml"
+  ],
+  "outputs": [
+    "bridge-interactive-agents-api-openapi.yml",
+    "bridge-interactive-listings-api-openapi.yml",
+    "bridge-interactive-offices-api-openapi.yml",
+    "bridge-interactive-open-houses-api-openapi.yml",
+    "bridge-interactive-reso-web-api-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
