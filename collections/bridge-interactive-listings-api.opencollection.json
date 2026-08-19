@@ -1,0 +1,122 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bridge API (Bridge Data Output) Agents Listings API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Listings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query listings for a dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/:dataset_id/listings",
+            "params": [
+              {
+                "name": "dataset_id",
+                "value": "",
+                "type": "path",
+                "description": "The dataset identifier the request is scoped to."
+              },
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Bridge access token. Optional when an Authorization Bearer header is supplied."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of records to return per page."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to skip for pagination."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in each record."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "Field name to sort results by."
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "Sort order."
+              },
+              {
+                "name": "near",
+                "value": "",
+                "type": "query",
+                "description": "Geographic point as \"longitude,latitude\" used for radius/near search."
+              }
+            ]
+          },
+          "docs": "Returns normalized listing/property records for the given dataset. Supports field selection, sorting, geo (near) search, pagination, and per-field filter operators such as ListPrice.gt or City.eq."
+        },
+        {
+          "info": {
+            "name": "Get a single listing by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/:dataset_id/listings/:id",
+            "params": [
+              {
+                "name": "dataset_id",
+                "value": "",
+                "type": "path",
+                "description": "The dataset identifier the request is scoped to."
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of a single resource record."
+              },
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Bridge access token. Optional when an Authorization Bearer header is supplied."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in each record."
+              }
+            ]
+          },
+          "docs": "Get a single listing by id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

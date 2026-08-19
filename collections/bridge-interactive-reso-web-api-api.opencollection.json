@@ -1,0 +1,367 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Bridge API (Bridge Data Output) Agents RESO Web API API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "RESO Web API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "RESO Web API metadata document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/:dataset_id/$metadata",
+            "params": [
+              {
+                "name": "dataset_id",
+                "value": "",
+                "type": "path",
+                "description": "The dataset identifier the request is scoped to."
+              },
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Bridge access token. Optional when an Authorization Bearer header is supplied."
+              }
+            ]
+          },
+          "docs": "Returns the RESO Web API (OData) metadata document describing the available resources and fields for the dataset."
+        },
+        {
+          "info": {
+            "name": "RESO Property collection (OData)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/:dataset_id/Property",
+            "params": [
+              {
+                "name": "dataset_id",
+                "value": "",
+                "type": "path",
+                "description": "The dataset identifier the request is scoped to."
+              },
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Bridge access token. Optional when an Authorization Bearer header is supplied."
+              },
+              {
+                "name": "$filter",
+                "value": "",
+                "type": "query",
+                "description": "OData filter expression (e.g. ListPrice gt 500000). Names are case sensitive."
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated OData field selection."
+              },
+              {
+                "name": "$top",
+                "value": "",
+                "type": "query",
+                "description": "OData page size (v2) / collection size (v3)."
+              },
+              {
+                "name": "$skip",
+                "value": "",
+                "type": "query",
+                "description": "OData number of records to skip."
+              },
+              {
+                "name": "$orderby",
+                "value": "",
+                "type": "query",
+                "description": "OData ordering expression (e.g. ListPrice desc)."
+              },
+              {
+                "name": "$expand",
+                "value": "",
+                "type": "query",
+                "description": "OData related resources to embed (e.g. Media, Member, Office)."
+              }
+            ]
+          },
+          "docs": "Returns RESO Data Dictionary Property records. Supports $filter, $select, $top, $skip, $orderby, and $expand (e.g. Media, Member, Office). Feed types such as /idx may be appended in the path."
+        },
+        {
+          "info": {
+            "name": "RESO Property replication endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/:dataset_id/Property/replication",
+            "params": [
+              {
+                "name": "dataset_id",
+                "value": "",
+                "type": "path",
+                "description": "The dataset identifier the request is scoped to."
+              },
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Bridge access token. Optional when an Authorization Bearer header is supplied."
+              },
+              {
+                "name": "$filter",
+                "value": "",
+                "type": "query",
+                "description": "OData filter expression (e.g. ListPrice gt 500000). Names are case sensitive."
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated OData field selection."
+              }
+            ]
+          },
+          "docs": "Replication endpoint used to extract more than 10,000 Property records for full dataset synchronization."
+        },
+        {
+          "info": {
+            "name": "RESO Member collection (OData)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/:dataset_id/Member",
+            "params": [
+              {
+                "name": "dataset_id",
+                "value": "",
+                "type": "path",
+                "description": "The dataset identifier the request is scoped to."
+              },
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Bridge access token. Optional when an Authorization Bearer header is supplied."
+              },
+              {
+                "name": "$filter",
+                "value": "",
+                "type": "query",
+                "description": "OData filter expression (e.g. ListPrice gt 500000). Names are case sensitive."
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated OData field selection."
+              },
+              {
+                "name": "$top",
+                "value": "",
+                "type": "query",
+                "description": "OData page size (v2) / collection size (v3)."
+              },
+              {
+                "name": "$skip",
+                "value": "",
+                "type": "query",
+                "description": "OData number of records to skip."
+              },
+              {
+                "name": "$orderby",
+                "value": "",
+                "type": "query",
+                "description": "OData ordering expression (e.g. ListPrice desc)."
+              }
+            ]
+          },
+          "docs": "RESO Member collection (OData)"
+        },
+        {
+          "info": {
+            "name": "RESO Office collection (OData)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/:dataset_id/Office",
+            "params": [
+              {
+                "name": "dataset_id",
+                "value": "",
+                "type": "path",
+                "description": "The dataset identifier the request is scoped to."
+              },
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Bridge access token. Optional when an Authorization Bearer header is supplied."
+              },
+              {
+                "name": "$filter",
+                "value": "",
+                "type": "query",
+                "description": "OData filter expression (e.g. ListPrice gt 500000). Names are case sensitive."
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated OData field selection."
+              },
+              {
+                "name": "$top",
+                "value": "",
+                "type": "query",
+                "description": "OData page size (v2) / collection size (v3)."
+              },
+              {
+                "name": "$skip",
+                "value": "",
+                "type": "query",
+                "description": "OData number of records to skip."
+              },
+              {
+                "name": "$orderby",
+                "value": "",
+                "type": "query",
+                "description": "OData ordering expression (e.g. ListPrice desc)."
+              }
+            ]
+          },
+          "docs": "RESO Office collection (OData)"
+        },
+        {
+          "info": {
+            "name": "RESO OpenHouse collection (OData)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/:dataset_id/OpenHouse",
+            "params": [
+              {
+                "name": "dataset_id",
+                "value": "",
+                "type": "path",
+                "description": "The dataset identifier the request is scoped to."
+              },
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Bridge access token. Optional when an Authorization Bearer header is supplied."
+              },
+              {
+                "name": "$filter",
+                "value": "",
+                "type": "query",
+                "description": "OData filter expression (e.g. ListPrice gt 500000). Names are case sensitive."
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated OData field selection."
+              },
+              {
+                "name": "$top",
+                "value": "",
+                "type": "query",
+                "description": "OData page size (v2) / collection size (v3)."
+              },
+              {
+                "name": "$skip",
+                "value": "",
+                "type": "query",
+                "description": "OData number of records to skip."
+              },
+              {
+                "name": "$orderby",
+                "value": "",
+                "type": "query",
+                "description": "OData ordering expression (e.g. ListPrice desc)."
+              }
+            ]
+          },
+          "docs": "RESO OpenHouse collection (OData)"
+        },
+        {
+          "info": {
+            "name": "RESO Media collection (OData)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bridgedataoutput.com/api/v2/OData/:dataset_id/Media",
+            "params": [
+              {
+                "name": "dataset_id",
+                "value": "",
+                "type": "path",
+                "description": "The dataset identifier the request is scoped to."
+              },
+              {
+                "name": "access_token",
+                "value": "",
+                "type": "query",
+                "description": "Bridge access token. Optional when an Authorization Bearer header is supplied."
+              },
+              {
+                "name": "$filter",
+                "value": "",
+                "type": "query",
+                "description": "OData filter expression (e.g. ListPrice gt 500000). Names are case sensitive."
+              },
+              {
+                "name": "$select",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated OData field selection."
+              },
+              {
+                "name": "$top",
+                "value": "",
+                "type": "query",
+                "description": "OData page size (v2) / collection size (v3)."
+              },
+              {
+                "name": "$skip",
+                "value": "",
+                "type": "query",
+                "description": "OData number of records to skip."
+              },
+              {
+                "name": "$orderby",
+                "value": "",
+                "type": "query",
+                "description": "OData ordering expression (e.g. ListPrice desc)."
+              }
+            ]
+          },
+          "docs": "RESO Media collection (OData)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
