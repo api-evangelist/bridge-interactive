@@ -1,0 +1,47 @@
+slug: bridge-interactive
+provider: Bridge Interactive
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Real Estate
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Listings
+  spec_file: bridge-interactive-listings-api-openapi.yml
+  capability_id: BC-4960.30
+  capability_id_l1: BC-4960
+  capability_name: Listing Data & MLS Management
+  confidence: 0.85
+  evidence: GET /{dataset_id}/listings getListings 'Query listings for a dataset'; vendor 'normalizes
+    MLS listing data to RESO standards'
+  reason: Read access to normalized MLS listing records is squarely listing data / MLS data management
+    within brokerage & agency services, not a generic IT data capability.
+- tag: RESO Web API
+  spec_file: bridge-interactive-reso-web-api-api-openapi.yml
+  capability_id: BC-4960.30
+  capability_id_l1: BC-4960
+  capability_name: Listing Data & MLS Management
+  confidence: 0.85
+  evidence: GET /OData/{dataset_id}/Property 'RESO Property collection (OData)'; GET /OData/{dataset_id}/Media
+    'RESO Media collection (OData)'
+  reason: OData collections for RESO Property, Member, Office, OpenHouse and Media are exactly MLS/portal
+    listing data capture and syndication in RESO-compliant form.
+- tag: Agents
+  spec_file: bridge-interactive-agents-api-openapi.yml
+  capability_id: BC-4960.30
+  capability_id_l1: BC-4960
+  capability_name: Listing Data & MLS Management
+  confidence: 0.7
+  evidence: 'GET /{dataset_id}/agents — "Query agents (members) for a dataset"; description: "RESO Data
+    Dictionary-aligned ''RESO Web API'' (OData) for Property, Member, Office, OpenHouse, and Media resources"'
+  reason: The surface exposes normalized MLS Member (agent) records from an MLS dataset under RESO standards
+    — this is MLS/listing data management and distribution, not agent performance or commission administration.
+    Confidence held at 0.7 because the tag covers the Member resource specifically rather than listing
+    data as a whole.

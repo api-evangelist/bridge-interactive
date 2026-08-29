@@ -130,6 +130,9 @@ apis:
   - type: Documentation
     url: https://bridgedataoutput.com/docs/explorer/reso-web-api
 common:
+- type: CapabilityMap
+  url: capabilities/bridge-interactive-capability-edges.yml
+  name: Bridge Interactive Business Capability Map
 - type: AgenticAccess
   url: agentic-access/bridge-interactive-agentic-access.yml
 - type: DomainSecurity
