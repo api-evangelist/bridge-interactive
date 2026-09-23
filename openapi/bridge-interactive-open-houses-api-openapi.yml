@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Bridge API (Bridge Data Output) Agents Open Houses API
+  title: Bridge API (Bridge Data Output) Open Houses API
   description: The Bridge API from Bridge Interactive (a Zillow Group company) provides normalized real-estate data access. It exposes a proprietary RESTful "Bridge Web API" (listings, agents, offices, open houses) and a RESO Data Dictionary-aligned "RESO Web API" (OData) for Property, Member, Office, OpenHouse, and Media resources. All requests are scoped to a dataset_id and authenticated with a Bearer server access token (also accepted as an access_token query parameter).
   termsOfService: https://www.bridgeinteractive.com/terms-of-use/
   contact:
@@ -58,6 +58,20 @@ components:
         enum:
         - asc
         - desc
+    accessToken:
+      name: access_token
+      in: query
+      required: false
+      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of records to skip for pagination.
+      schema:
+        type: integer
     limit:
       name: limit
       in: query
@@ -80,20 +94,6 @@ components:
       description: Comma-separated list of fields to include in each record.
       schema:
         type: string
-    accessToken:
-      name: access_token
-      in: query
-      required: false
-      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Number of records to skip for pagination.
-      schema:
-        type: integer
   responses:
     Unauthorized:
       description: Missing or invalid access token.
@@ -102,6 +102,15 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
   schemas:
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        status:
+          type: integer
+        message:
+          type: string
     Bundle:
       type: object
       description: Bridge Web API response envelope for a collection of records.
@@ -117,15 +126,6 @@ components:
             additionalProperties: true
         total:
           type: integer
-    Error:
-      type: object
-      properties:
-        success:
-          type: boolean
-        status:
-          type: integer
-        message:
-          type: string
   securitySchemes:
     bearerAuth:
       type: http

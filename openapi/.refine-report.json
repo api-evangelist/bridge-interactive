@@ -1,11 +1,7 @@
 {
   "provider": "bridge-interactive",
   "sources": [
-    "bridge-interactive-agents-api-openapi.yml",
-    "bridge-interactive-listings-api-openapi.yml",
-    "bridge-interactive-offices-api-openapi.yml",
-    "bridge-interactive-open-houses-api-openapi.yml",
-    "bridge-interactive-reso-web-api-api-openapi.yml"
+    "_original/bridge-interactive-openapi.yml"
   ],
   "outputs": [
     "bridge-interactive-agents-api-openapi.yml",
@@ -17,6 +13,21 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "bridge-interactive-openapi.yml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "bridge-interactive-openapi.yml: declared missing tag: Agents",
+    "bridge-interactive-openapi.yml: declared missing tag: Listings",
+    "bridge-interactive-openapi.yml: declared missing tag: Offices",
+    "bridge-interactive-openapi.yml: declared missing tag: Open Houses",
+    "bridge-interactive-openapi.yml: declared missing tag: RESO Web API",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "bridge-interactive-agents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bridge-interactive-listings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bridge-interactive-offices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bridge-interactive-open-houses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bridge-interactive-reso-web-api-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
