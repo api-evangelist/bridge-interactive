@@ -33,7 +33,7 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/bridge-interactive.png
 tags:
-- Real-Estate
+- Real Estate
 - MLS
 - RESO
 - Listings
@@ -44,6 +44,7 @@ tags_raw:
 - RESO
 - Listings
 - Property Data
+- Real-Estate
 created: '2026-06-21'
 modified: '2026-09-16'
 specificationVersion: '0.23'

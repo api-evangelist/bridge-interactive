@@ -59,13 +59,6 @@ paths:
                 $ref: '#/components/schemas/SingleResource'
 components:
   parameters:
-    sortBy:
-      name: sortBy
-      in: query
-      required: false
-      description: Field name to sort results by.
-      schema:
-        type: string
     order:
       name: order
       in: query
@@ -76,11 +69,11 @@ components:
         enum:
         - asc
         - desc
-    accessToken:
-      name: access_token
+    sortBy:
+      name: sortBy
       in: query
       required: false
-      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
+      description: Field name to sort results by.
       schema:
         type: string
     offset:
@@ -90,11 +83,32 @@ components:
       description: Number of records to skip for pagination.
       schema:
         type: integer
+    datasetId:
+      name: dataset_id
+      in: path
+      required: true
+      description: The dataset identifier the request is scoped to.
+      schema:
+        type: string
     resourceId:
       name: id
       in: path
       required: true
       description: The unique identifier of a single resource record.
+      schema:
+        type: string
+    accessToken:
+      name: access_token
+      in: query
+      required: false
+      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to include in each record.
       schema:
         type: string
     limit:
@@ -105,20 +119,6 @@ components:
       schema:
         type: integer
         default: 10
-    datasetId:
-      name: dataset_id
-      in: path
-      required: true
-      description: The dataset identifier the request is scoped to.
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      description: Comma-separated list of fields to include in each record.
-      schema:
-        type: string
   responses:
     Unauthorized:
       description: Missing or invalid access token.
@@ -127,26 +127,6 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
   schemas:
-    Error:
-      type: object
-      properties:
-        success:
-          type: boolean
-        status:
-          type: integer
-        message:
-          type: string
-    SingleResource:
-      type: object
-      description: Bridge Web API response envelope for a single record.
-      properties:
-        success:
-          type: boolean
-        status:
-          type: integer
-        bundle:
-          type: object
-          additionalProperties: true
     Bundle:
       type: object
       description: Bridge Web API response envelope for a collection of records.
@@ -162,6 +142,26 @@ components:
             additionalProperties: true
         total:
           type: integer
+    SingleResource:
+      type: object
+      description: Bridge Web API response envelope for a single record.
+      properties:
+        success:
+          type: boolean
+        status:
+          type: integer
+        bundle:
+          type: object
+          additionalProperties: true
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        status:
+          type: integer
+        message:
+          type: string
   securitySchemes:
     bearerAuth:
       type: http
