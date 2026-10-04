@@ -157,16 +157,71 @@ paths:
               schema:
                 $ref: '#/components/schemas/ODataCollection'
 components:
+  parameters:
+    accessToken:
+      name: access_token
+      in: query
+      required: false
+      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
+      schema:
+        type: string
+    odataExpand:
+      name: $expand
+      in: query
+      required: false
+      description: OData related resources to embed (e.g. Media, Member, Office).
+      schema:
+        type: string
+    odataOrderby:
+      name: $orderby
+      in: query
+      required: false
+      description: OData ordering expression (e.g. ListPrice desc).
+      schema:
+        type: string
+    odataFilter:
+      name: $filter
+      in: query
+      required: false
+      description: OData filter expression (e.g. ListPrice gt 500000). Names are case sensitive.
+      schema:
+        type: string
+    odataSkip:
+      name: $skip
+      in: query
+      required: false
+      description: OData number of records to skip.
+      schema:
+        type: integer
+    odataTop:
+      name: $top
+      in: query
+      required: false
+      description: OData page size (v2) / collection size (v3).
+      schema:
+        type: integer
+    datasetId:
+      name: dataset_id
+      in: path
+      required: true
+      description: The dataset identifier the request is scoped to.
+      schema:
+        type: string
+    odataSelect:
+      name: $select
+      in: query
+      required: false
+      description: Comma-separated OData field selection.
+      schema:
+        type: string
+  responses:
+    Unauthorized:
+      description: Missing or invalid access token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    Error:
-      type: object
-      properties:
-        success:
-          type: boolean
-        status:
-          type: integer
-        message:
-          type: string
     ODataCollection:
       type: object
       description: OData collection response for RESO Web API resources.
@@ -180,70 +235,15 @@ components:
           items:
             type: object
             additionalProperties: true
-  parameters:
-    odataTop:
-      name: $top
-      in: query
-      required: false
-      description: OData page size (v2) / collection size (v3).
-      schema:
-        type: integer
-    odataFilter:
-      name: $filter
-      in: query
-      required: false
-      description: OData filter expression (e.g. ListPrice gt 500000). Names are case sensitive.
-      schema:
-        type: string
-    odataSelect:
-      name: $select
-      in: query
-      required: false
-      description: Comma-separated OData field selection.
-      schema:
-        type: string
-    accessToken:
-      name: access_token
-      in: query
-      required: false
-      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
-      schema:
-        type: string
-    odataOrderby:
-      name: $orderby
-      in: query
-      required: false
-      description: OData ordering expression (e.g. ListPrice desc).
-      schema:
-        type: string
-    datasetId:
-      name: dataset_id
-      in: path
-      required: true
-      description: The dataset identifier the request is scoped to.
-      schema:
-        type: string
-    odataExpand:
-      name: $expand
-      in: query
-      required: false
-      description: OData related resources to embed (e.g. Media, Member, Office).
-      schema:
-        type: string
-    odataSkip:
-      name: $skip
-      in: query
-      required: false
-      description: OData number of records to skip.
-      schema:
-        type: integer
-  responses:
-    Unauthorized:
-      description: Missing or invalid access token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        status:
+          type: integer
+        message:
+          type: string
   securitySchemes:
     bearerAuth:
       type: http

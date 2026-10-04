@@ -40,6 +40,67 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  parameters:
+    sortBy:
+      name: sortBy
+      in: query
+      required: false
+      description: Field name to sort results by.
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of records to skip for pagination.
+      schema:
+        type: integer
+    accessToken:
+      name: access_token
+      in: query
+      required: false
+      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to include in each record.
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of records to return per page.
+      schema:
+        type: integer
+        default: 10
+    order:
+      name: order
+      in: query
+      required: false
+      description: Sort order.
+      schema:
+        type: string
+        enum:
+        - asc
+        - desc
+    datasetId:
+      name: dataset_id
+      in: path
+      required: true
+      description: The dataset identifier the request is scoped to.
+      schema:
+        type: string
+  responses:
+    Unauthorized:
+      description: Missing or invalid access token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
     Bundle:
       type: object
@@ -65,67 +126,6 @@ components:
           type: integer
         message:
           type: string
-  responses:
-    Unauthorized:
-      description: Missing or invalid access token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-  parameters:
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of records to return per page.
-      schema:
-        type: integer
-        default: 10
-    accessToken:
-      name: access_token
-      in: query
-      required: false
-      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
-      schema:
-        type: string
-    order:
-      name: order
-      in: query
-      required: false
-      description: Sort order.
-      schema:
-        type: string
-        enum:
-        - asc
-        - desc
-    fields:
-      name: fields
-      in: query
-      required: false
-      description: Comma-separated list of fields to include in each record.
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Number of records to skip for pagination.
-      schema:
-        type: integer
-    datasetId:
-      name: dataset_id
-      in: path
-      required: true
-      description: The dataset identifier the request is scoped to.
-      schema:
-        type: string
-    sortBy:
-      name: sortBy
-      in: query
-      required: false
-      description: Field name to sort results by.
-      schema:
-        type: string
   securitySchemes:
     bearerAuth:
       type: http

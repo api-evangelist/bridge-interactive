@@ -63,43 +63,28 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  schemas:
-    Bundle:
-      type: object
-      description: Bridge Web API response envelope for a collection of records.
-      properties:
-        success:
-          type: boolean
-        status:
-          type: integer
-        bundle:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
-        total:
-          type: integer
-    Error:
-      type: object
-      properties:
-        success:
-          type: boolean
-        status:
-          type: integer
-        message:
-          type: string
-    SingleResource:
-      type: object
-      description: Bridge Web API response envelope for a single record.
-      properties:
-        success:
-          type: boolean
-        status:
-          type: integer
-        bundle:
-          type: object
-          additionalProperties: true
   parameters:
+    sortBy:
+      name: sortBy
+      in: query
+      required: false
+      description: Field name to sort results by.
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of records to skip for pagination.
+      schema:
+        type: integer
+    accessToken:
+      name: access_token
+      in: query
+      required: false
+      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
+      schema:
+        type: string
     resourceId:
       name: id
       in: path
@@ -112,6 +97,13 @@ components:
       in: query
       required: false
       description: Geographic point as "longitude,latitude" used for radius/near search.
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to include in each record.
       schema:
         type: string
     limit:
@@ -132,27 +124,6 @@ components:
         enum:
         - asc
         - desc
-    fields:
-      name: fields
-      in: query
-      required: false
-      description: Comma-separated list of fields to include in each record.
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Number of records to skip for pagination.
-      schema:
-        type: integer
-    accessToken:
-      name: access_token
-      in: query
-      required: false
-      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
-      schema:
-        type: string
     datasetId:
       name: dataset_id
       in: path
@@ -160,13 +131,42 @@ components:
       description: The dataset identifier the request is scoped to.
       schema:
         type: string
-    sortBy:
-      name: sortBy
-      in: query
-      required: false
-      description: Field name to sort results by.
-      schema:
-        type: string
+  schemas:
+    SingleResource:
+      type: object
+      description: Bridge Web API response envelope for a single record.
+      properties:
+        success:
+          type: boolean
+        status:
+          type: integer
+        bundle:
+          type: object
+          additionalProperties: true
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        status:
+          type: integer
+        message:
+          type: string
+    Bundle:
+      type: object
+      description: Bridge Web API response envelope for a collection of records.
+      properties:
+        success:
+          type: boolean
+        status:
+          type: integer
+        bundle:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        total:
+          type: integer
   responses:
     Unauthorized:
       description: Missing or invalid access token.
