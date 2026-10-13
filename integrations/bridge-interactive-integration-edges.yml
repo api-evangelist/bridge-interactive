@@ -14,13 +14,13 @@ edges:
     registered_name: Bridge Interactive
     organization_uoi: T00000044
     matched_domain: bridgeinteractive.com
-    matched_by: domain-owner
+    matched_by: domain
     endorsements:
     - Data Dictionary 1.7 Certified Legacy
     - Web API Core 2.0.0 Certified Legacy
     summary_url: https://certification.reso.org/summary/T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: South Carolina Commercial Multiple Listing Service
   partner: null
   partner_match: null
@@ -41,7 +41,7 @@ edges:
     organization_type: Commercial
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Alaska Multiple Listing Service
   partner: null
   partner_match: null
@@ -62,7 +62,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: All Jersey MLS
   partner: null
   partner_match: null
@@ -83,7 +83,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Athens County Board of REALTORS®
   partner: null
   partner_match: null
@@ -104,7 +104,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Bay Area Real Estate Information Services (BAREIS)
   partner: null
   partner_match: null
@@ -125,7 +125,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Bay East Association of REALTORS®
   partner: null
   partner_match: null
@@ -146,7 +146,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: BeachesMLS
   partner: null
   partner_match: null
@@ -167,7 +167,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: bridgeMLS
   partner: null
   partner_match: null
@@ -188,7 +188,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Cape Cod & Islands Association of REALTORS®
   partner: null
   partner_match: null
@@ -209,7 +209,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: CHS Regional MLS (Charleston Trident Association of REALTORS®)
   partner: null
   partner_match: null
@@ -230,7 +230,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Contra Costa Association of REALTORS®
   partner: null
   partner_match: null
@@ -251,7 +251,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Doorify MLS
   partner: null
   partner_match: null
@@ -273,7 +273,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: First Multiple Listing Service (FMLS)
   partner: null
   partner_match: null
@@ -295,7 +295,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Georgia MLS
   partner: null
   partner_match: null
@@ -316,7 +316,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Greater El Paso Association of REALTORS®
   partner: null
   partner_match: null
@@ -337,7 +337,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Greater Lehigh Valley REALTORS®
   partner: null
   partner_match: null
@@ -358,7 +358,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Greater McAllen Association of REALTORS®
   partner: null
   partner_match: null
@@ -379,7 +379,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Gulf Coast MLS (Mobile Area Association of REALTORS®)
   partner: null
   partner_match: null
@@ -401,7 +401,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Houston Association of REALTORS®
   partner: null
   partner_match: null
@@ -422,7 +422,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Idyllwild MLS
   partner: null
   partner_match: null
@@ -443,7 +443,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Intermountain MLS
   partner: null
   partner_match: null
@@ -464,7 +464,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: IRES MLS
   partner: null
   partner_match: null
@@ -485,7 +485,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: LINK
   partner: null
   partner_match: null
@@ -506,7 +506,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Martha's Vineyard MLS
   partner: null
   partner_match: null
@@ -527,7 +527,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: MIAMI REALTORS® MLS
   partner: null
   partner_match: null
@@ -548,7 +548,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: MLS of Greater Cincinnati (CincyMLS)
   partner: null
   partner_match: null
@@ -569,7 +569,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: MLS Property Information Network (MLS PIN)
   partner: null
   partner_match: null
@@ -590,7 +590,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Naples Area Board of REALTORS®
   partner: null
   partner_match: null
@@ -611,7 +611,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: New Mexico MLS
   partner: null
   partner_match: null
@@ -632,7 +632,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: North Florida MLS (Lake City Board of REALTORS®)
   partner: null
   partner_match: null
@@ -653,7 +653,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Northeast Georgia Board of REALTORS®
   partner: null
   partner_match: null
@@ -674,7 +674,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Northeast REALTORS® of Louisiana
   partner: null
   partner_match: null
@@ -695,7 +695,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Northern Great Lakes REALTORS® MLS
   partner: null
   partner_match: null
@@ -716,7 +716,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: OneKey® MLS
   partner: null
   partner_match: null
@@ -737,7 +737,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Park City Board of REALTORS®
   partner: null
   partner_match: null
@@ -758,7 +758,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Pensacola Association of REALTORS®
   partner: null
   partner_match: null
@@ -779,7 +779,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: San Francisco Association of REALTORS® MLS
   partner: null
   partner_match: null
@@ -800,7 +800,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: SmartMLS
   partner: null
   partner_match: null
@@ -821,7 +821,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: State-Wide MLS
   partner: null
   partner_match: null
@@ -842,10 +842,10 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Stellar MLS
-  partner: null
-  partner_match: null
+  partner: stellar-mls
+  partner_match: domain
   type: contract
   channel: network-directory
   relationship: endpoint-coverage
@@ -863,7 +863,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: The MLS
   partner: null
   partner_match: null
@@ -884,7 +884,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Triad MLS
   partner: null
   partner_match: null
@@ -906,7 +906,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Unlock MLS (Austin Board of REALTORS®)
   partner: null
   partner_match: null
@@ -927,7 +927,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: ValleyMLS.com
   partner: null
   partner_match: null
@@ -948,7 +948,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Western New York Real Estate Information Services (WNYREIS)
   partner: null
   partner_match: null
@@ -969,7 +969,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Out East
   partner: null
   partner_match: null
@@ -990,7 +990,7 @@ edges:
     organization_type: Technology Company
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: StreetEasy
   partner: null
   partner_match: null
@@ -1011,7 +1011,7 @@ edges:
     organization_type: Technology Company
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Zillow
   partner: null
   partner_match: null
@@ -1032,7 +1032,7 @@ edges:
     organization_type: Technology Company
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Nova Scotia Association of REALTORS®
   partner: null
   partner_match: null
@@ -1053,7 +1053,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: REALTORS® Association of Edmonton
   partner: null
   partner_match: null
@@ -1074,7 +1074,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Victoria Real Estate Board
   partner: null
   partner_match: null
@@ -1095,7 +1095,7 @@ edges:
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 - partner_name: Information Technology Systems Ontario (ITSO)
   partner: null
   partner_match: null
@@ -1116,7 +1116,7 @@ edges:
     organization_type: Pooled Platform
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
 generated: '2026-10-13'
 method: searched
 checked:

@@ -20,13 +20,13 @@
     registered_name: Bridge Interactive
     organization_uoi: T00000044
     matched_domain: bridgeinteractive.com
-    matched_by: domain-owner
+    matched_by: domain
     endorsements:
     - Data Dictionary 1.7 Certified Legacy
     - Web API Core 2.0.0 Certified Legacy
     summary_url: https://certification.reso.org/summary/T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-south-carolina-commercial-multiple-listing-service
@@ -49,7 +49,7 @@
     organization_type: Commercial
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-alaska-multiple-listing-service
@@ -72,7 +72,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-all-jersey-mls
@@ -95,7 +95,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-athens-county-board-of-realtors
@@ -118,7 +118,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-bay-area-real-estate-information-services-bareis
@@ -141,7 +141,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-bay-east-association-of-realtors
@@ -164,7 +164,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-beachesmls
@@ -187,7 +187,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-bridgemls
@@ -210,7 +210,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-cape-cod-islands-association-of-realtors
@@ -233,7 +233,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-chs-regional-mls-charleston-trident-association-of-realtors
@@ -256,7 +256,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-contra-costa-association-of-realtors
@@ -279,7 +279,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-doorify-mls
@@ -303,7 +303,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-first-multiple-listing-service-fmls
@@ -327,7 +327,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-georgia-mls
@@ -350,7 +350,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-greater-el-paso-association-of-realtors
@@ -373,7 +373,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-greater-lehigh-valley-realtors
@@ -396,7 +396,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-greater-mcallen-association-of-realtors
@@ -419,7 +419,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-gulf-coast-mls-mobile-area-association-of-realtors
@@ -443,7 +443,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-houston-association-of-realtors
@@ -466,7 +466,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-idyllwild-mls
@@ -489,7 +489,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-intermountain-mls
@@ -512,7 +512,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-ires-mls
@@ -535,7 +535,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-link
@@ -558,7 +558,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-martha-s-vineyard-mls
@@ -581,7 +581,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-miami-realtors-mls
@@ -604,7 +604,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-mls-of-greater-cincinnati-cincymls
@@ -627,7 +627,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-mls-property-information-network-mls-pin
@@ -650,7 +650,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-naples-area-board-of-realtors
@@ -673,7 +673,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-new-mexico-mls
@@ -696,7 +696,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-north-florida-mls-lake-city-board-of-realtors
@@ -719,7 +719,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-northeast-georgia-board-of-realtors
@@ -742,7 +742,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-northeast-realtors-of-louisiana
@@ -765,7 +765,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-northern-great-lakes-realtors-mls
@@ -788,7 +788,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-onekey-mls
@@ -811,7 +811,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-park-city-board-of-realtors
@@ -834,7 +834,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-pensacola-association-of-realtors
@@ -857,7 +857,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-san-francisco-association-of-realtors-mls
@@ -880,7 +880,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-smartmls
@@ -903,7 +903,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-state-wide-mls
@@ -926,11 +926,12 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-stellar-mls
   label: Stellar MLS
+  partner: stellar-mls
   partner_name: Stellar MLS
   category: RESO-certified MLS feed
   type: contract
@@ -949,7 +950,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-the-mls
@@ -972,7 +973,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-triad-mls
@@ -996,7 +997,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-unlock-mls-austin-board-of-realtors
@@ -1019,7 +1020,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-valleymls-com
@@ -1042,7 +1043,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-western-new-york-real-estate-information-services-wnyreis
@@ -1065,7 +1066,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-out-east
@@ -1088,7 +1089,7 @@
     organization_type: Technology Company
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-streeteasy
@@ -1111,7 +1112,7 @@
     organization_type: Technology Company
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-zillow
@@ -1134,7 +1135,7 @@
     organization_type: Technology Company
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-nova-scotia-association-of-realtors
@@ -1157,7 +1158,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-realtors-association-of-edmonton
@@ -1180,7 +1181,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-victoria-real-estate-board
@@ -1203,7 +1204,7 @@
     organization_type: MLS
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
 - slug: bridge-interactive-information-technology-systems-ontario-itso
@@ -1226,6 +1227,6 @@
     organization_type: Pooled Platform
     vendor_uoi: T00000044
     detected_by: sweep-real-estate.py
-    detected: '2026-10-13'
+    detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
