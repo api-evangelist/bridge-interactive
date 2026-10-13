@@ -1,0 +1,146 @@
+generated: '2026-10-13'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/bridge-interactive-agents-api-openapi.yml
+- openapi/bridge-interactive-listings-api-openapi.yml
+- openapi/bridge-interactive-member-api-openapi.yml
+- openapi/bridge-interactive-office-api-openapi.yml
+- openapi/bridge-interactive-offices-api-openapi.yml
+- openapi/bridge-interactive-open-houses-api-openapi.yml
+- openapi/bridge-interactive-property-api-openapi.yml
+- openapi/bridge-interactive-reso-web-api-api-openapi.yml
+- openapi/bridge-interactive-webhooks-api-openapi.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: derived
+note: No MCP server was found. No probe result in the dossier. Candidate tools below are derived from the 25 operation(s) in the provider's own
+  OpenAPI (25 listed); they describe what a server WOULD expose, not one that exists.
+tools:
+- name: get_agents
+  operationId: getAgents
+  method: GET
+  path: /{dataset_id}/agents
+  description: Query agents (members) for a dataset
+- name: get_listings
+  operationId: getListings
+  method: GET
+  path: /{dataset_id}/listings
+  description: Query listings for a dataset
+- name: list_members
+  operationId: listMembers
+  method: GET
+  path: /{dataset}/Member
+  description: List Members
+- name: list_offices
+  operationId: listOffices
+  method: GET
+  path: /{dataset}/Office
+  description: List Offices
+- name: get_offices
+  operationId: getOffices
+  method: GET
+  path: /{dataset_id}/offices
+  description: Query offices for a dataset
+- name: get_open_houses
+  operationId: getOpenHouses
+  method: GET
+  path: /{dataset_id}/openhouses
+  description: Query open houses for a dataset
+- name: list_properties
+  operationId: listProperties
+  method: GET
+  path: /{dataset}/Property
+  description: List Properties
+- name: get_reso_metadata
+  operationId: getResoMetadata
+  method: GET
+  path: /OData/{dataset_id}/$metadata
+  description: RESO Web API metadata document
+- name: list_webhooks
+  operationId: listWebhooks
+  method: GET
+  path: /{dataset}/webhooks
+  description: List Webhook Endpoints
+- name: get_agent
+  operationId: getAgent
+  method: GET
+  path: /{dataset_id}/agents/{id}
+  description: Get a single agent by id
+- name: get_listing
+  operationId: getListing
+  method: GET
+  path: /{dataset_id}/listings/{id}
+  description: Get a single listing by id
+- name: get_member
+  operationId: getMember
+  method: GET
+  path: /{dataset}/Member('{memberKey}')
+  description: Get Member By Key
+- name: get_office
+  operationId: getOffice
+  method: GET
+  path: /{dataset}/Office('{officeKey}')
+  description: Get Office By Key
+- name: get_property
+  operationId: getProperty
+  method: GET
+  path: /{dataset}/Property('{listingKey}')
+  description: Get Property By Listing Key
+- name: get_reso_property
+  operationId: getResoProperty
+  method: GET
+  path: /OData/{dataset_id}/Property
+  description: RESO Property collection (OData)
+- name: create_webhook
+  operationId: createWebhook
+  method: POST
+  path: /{dataset}/webhooks
+  description: Create Webhook Endpoint
+- name: get_reso_property_replication
+  operationId: getResoPropertyReplication
+  method: GET
+  path: /OData/{dataset_id}/Property/replication
+  description: RESO Property replication endpoint
+- name: get_webhook
+  operationId: getWebhook
+  method: GET
+  path: /{dataset}/webhooks/{webhookId}
+  description: Get Webhook Endpoint
+- name: get_reso_member
+  operationId: getResoMember
+  method: GET
+  path: /OData/{dataset_id}/Member
+  description: RESO Member collection (OData)
+- name: update_webhook
+  operationId: updateWebhook
+  method: PATCH
+  path: /{dataset}/webhooks/{webhookId}
+  description: Update Webhook Endpoint
+- name: get_reso_office
+  operationId: getResoOffice
+  method: GET
+  path: /OData/{dataset_id}/Office
+  description: RESO Office collection (OData)
+- name: delete_webhook
+  operationId: deleteWebhook
+  method: DELETE
+  path: /{dataset}/webhooks/{webhookId}
+  description: Delete Webhook Endpoint
+- name: get_reso_open_house
+  operationId: getResoOpenHouse
+  method: GET
+  path: /OData/{dataset_id}/OpenHouse
+  description: RESO OpenHouse collection (OData)
+- name: test_webhook
+  operationId: testWebhook
+  method: POST
+  path: /{dataset}/webhooks/{webhookId}/test
+  description: Test Webhook Endpoint
+- name: get_reso_media
+  operationId: getResoMedia
+  method: GET
+  path: /OData/{dataset_id}/Media
+  description: RESO Media collection (OData)

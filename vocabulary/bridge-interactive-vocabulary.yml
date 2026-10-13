@@ -1,0 +1,99 @@
+generated: '2026-10-13'
+method: derived
+generator: derive-vocabulary.py
+source:
+- openapi/bridge-interactive-agents-api-openapi.yml
+- openapi/bridge-interactive-listings-api-openapi.yml
+- openapi/bridge-interactive-member-api-openapi.yml
+- openapi/bridge-interactive-office-api-openapi.yml
+- openapi/bridge-interactive-offices-api-openapi.yml
+vocabulary:
+  name: Bridge Interactive Domain Vocabulary
+  description: 'Terms declared by Bridge Interactive''s own API contract: its resource groups, objects and enumerations, with the contract''s
+    definitions. Derived, not authored.'
+  version: '2026-10-13'
+  terms:
+  - term: Member
+    definition: RESO Member resource (agents)
+    tags:
+    - Resource Group
+    source: openapi/bridge-interactive-member-api-openapi.yml
+  - term: Office
+    definition: RESO Office resource (brokerages)
+    tags:
+    - Resource Group
+    source: openapi/bridge-interactive-office-api-openapi.yml
+  - term: Property
+    definition: RESO Property resource (listings)
+    tags:
+    - Resource Group
+    source: openapi/bridge-interactive-property-api-openapi.yml
+  - term: SingleResource
+    definition: Bridge Web API response envelope for a single record.
+    tags:
+    - Object
+    source: openapi/bridge-interactive-agents-api-openapi.yml#/components/schemas/SingleResource
+  - term: Bundle
+    definition: Bridge Web API response envelope for a collection of records.
+    tags:
+    - Object
+    source: openapi/bridge-interactive-agents-api-openapi.yml#/components/schemas/Bundle
+  - term: Error
+    definition: 'Object declared by the contract with fields: success, status, message.'
+    tags:
+    - Object
+    source: openapi/bridge-interactive-agents-api-openapi.yml#/components/schemas/Error
+  - term: MemberCollection
+    definition: 'Object declared by the contract with fields: @odata.context, value.'
+    tags:
+    - Object
+    source: openapi/bridge-interactive-member-api-openapi.yml#/components/schemas/MemberCollection
+  - term: Media
+    definition: 'Object declared by the contract with fields: MediaKey, MediaURL, MediaCategory, MediaType, Order, ImageWidth, ImageHeight, ResourceRecordKey,
+      ModificationTimestamp.'
+    tags:
+    - Object
+    source: openapi/bridge-interactive-property-api-openapi.yml#/components/schemas/Media
+  - term: PropertyCollection
+    definition: 'Object declared by the contract with fields: @odata.context, @odata.count, @odata.nextLink, value.'
+    tags:
+    - Object
+    source: openapi/bridge-interactive-property-api-openapi.yml#/components/schemas/PropertyCollection
+  - term: ODataCollection
+    definition: OData collection response for RESO Web API resources.
+    tags:
+    - Object
+    source: openapi/bridge-interactive-reso-web-api-api-openapi.yml#/components/schemas/ODataCollection
+  - term: Agents
+    definition: 'Resource group in the contract; its operation GET /{dataset_id}/agents: Returns agent/member records.'
+    tags:
+    - Resource Group
+    source: openapi/bridge-interactive-agents-api-openapi.yml
+  - term: Listings
+    definition: 'Resource group in the contract; its operation GET /{dataset_id}/listings: Returns normalized listing/property records for the
+      given dataset.'
+    tags:
+    - Resource Group
+    source: openapi/bridge-interactive-listings-api-openapi.yml
+  - term: Offices
+    definition: 'Resource group in the contract; its operation GET /{dataset_id}/offices: Returns brokerage office records.'
+    tags:
+    - Resource Group
+    source: openapi/bridge-interactive-offices-api-openapi.yml
+  - term: Open Houses
+    definition: 'Resource group in the contract; its operation GET /{dataset_id}/openhouses: Returns scheduled open house records, including date
+      and time window and the associated listing.'
+    tags:
+    - Resource Group
+    source: openapi/bridge-interactive-open-houses-api-openapi.yml
+  - term: RESO Web API
+    definition: 'Resource group in the contract; its operation GET /OData/{dataset_id}/$metadata: Returns the RESO Web API (OData) metadata document
+      describing the available resources and fields for the dataset.'
+    tags:
+    - Resource Group
+    source: openapi/bridge-interactive-reso-web-api-api-openapi.yml
+  - term: Webhooks
+    definition: 'Resource group in the contract; its operation GET /{dataset}/webhooks: List Webhook Endpoints'
+    tags:
+    - Resource Group
+    source: openapi/bridge-interactive-webhooks-api-openapi.yml

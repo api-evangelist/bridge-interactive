@@ -1,11 +1,15 @@
 aid: bridge-interactive
+
 url: https://raw.githubusercontent.com/api-evangelist/bridge-interactive/refs/heads/main/apis.yml
+
 name: Bridge Interactive
+
 kind: company
-description: Bridge Interactive (a Zillow Group company) is a real-estate data-access platform that normalizes
-  MLS listing data to RESO standards and serves it through the Bridge API. The Bridge Data Output platform
-  exposes a proprietary RESTful Bridge Web API and a RESO-compliant RESO Web API (OData) for properties,
-  members, offices, open houses, and media, all secured with a Bearer server token.
+
+description: Bridge Interactive (a Zillow Group company) is a real-estate data-access platform that normalizes MLS listing data to RESO standards
+  and serves it through the Bridge API. The Bridge Data Output platform exposes a proprietary RESTful Bridge Web API and a RESO-compliant RESO
+  Web API (OData) for properties, members, offices, open houses, and media, all secured with a Bearer server token.
+
 deliveryModel:
   model: saas
   open_source: false
@@ -18,6 +22,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: self-serve
@@ -31,13 +36,16 @@ accessModel:
   - authentication
   generated: '2026-07-22'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/bridge-interactive.png
+
 tags:
 - Real Estate
 - MLS
 - RESO
 - Listings
 - Property Data
+
 tags_raw:
 - Real Estate
 - MLS
@@ -45,91 +53,30 @@ tags_raw:
 - Listings
 - Property Data
 - Real-Estate
+
 created: '2026-06-21'
+
 modified: '2026-09-16'
+
 specificationVersion: '0.23'
-apis:
-- aid: bridge-interactive:bridge-interactive-agents-api
-  name: Bridge Interactive Agents API
-  description: The Agents API from Bridge Interactive — 2 operation(s) for agents.
-  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
-  baseURL: https://api.bridgedataoutput.com/api/v2
-  tags:
-  - Agents
-  properties:
-  - type: OpenAPI
-    url: openapi/bridge-interactive-agents-api-openapi.yml
-  - type: Documentation
-    url: https://bridgedataoutput.com/docs/platform/API/bridge
-  - type: APIReference
-    url: https://bridgedataoutput.com/docs/platform/API
-  - type: Documentation
-    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
-- aid: bridge-interactive:bridge-interactive-listings-api
-  name: Bridge Interactive Listings API
-  description: The Listings API from Bridge Interactive — 2 operation(s) for listings.
-  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
-  baseURL: https://api.bridgedataoutput.com/api/v2
-  tags:
-  - Listings
-  properties:
-  - type: OpenAPI
-    url: openapi/bridge-interactive-listings-api-openapi.yml
-  - type: Documentation
-    url: https://bridgedataoutput.com/docs/platform/API/bridge
-  - type: APIReference
-    url: https://bridgedataoutput.com/docs/platform/API
-  - type: Documentation
-    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
-- aid: bridge-interactive:bridge-interactive-offices-api
-  name: Bridge Interactive Offices API
-  description: The Offices API from Bridge Interactive — 2 operation(s) for offices.
-  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
-  baseURL: https://api.bridgedataoutput.com/api/v2
-  tags:
-  - Offices
-  properties:
-  - type: OpenAPI
-    url: openapi/bridge-interactive-offices-api-openapi.yml
-  - type: Documentation
-    url: https://bridgedataoutput.com/docs/platform/API/bridge
-  - type: APIReference
-    url: https://bridgedataoutput.com/docs/platform/API
-  - type: Documentation
-    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
-- aid: bridge-interactive:bridge-interactive-open-houses-api
-  name: Bridge Interactive Open Houses API
-  description: The Open Houses API from Bridge Interactive — 1 operation(s) for open houses.
-  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
-  baseURL: https://api.bridgedataoutput.com/api/v2
-  tags:
-  - Open Houses
-  properties:
-  - type: OpenAPI
-    url: openapi/bridge-interactive-open-houses-api-openapi.yml
-  - type: Documentation
-    url: https://bridgedataoutput.com/docs/platform/API/bridge
-  - type: APIReference
-    url: https://bridgedataoutput.com/docs/platform/API
-  - type: Documentation
-    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
-- aid: bridge-interactive:bridge-interactive-reso-web-api-api
-  name: Bridge Interactive RESO Web API
-  description: The RESO Web API API from Bridge Interactive — 7 operation(s) for reso web api.
-  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
-  baseURL: https://api.bridgedataoutput.com/api/v2
-  tags:
-  - RESO Web API
-  properties:
-  - type: OpenAPI
-    url: openapi/bridge-interactive-reso-web-api-api-openapi.yml
-  - type: Documentation
-    url: https://bridgedataoutput.com/docs/platform/API/bridge
-  - type: APIReference
-    url: https://bridgedataoutput.com/docs/platform/API
-  - type: Documentation
-    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
 common:
+- type: Spectral
+  url: rules/bridge-interactive-rules.yml
+- type: Vocabulary
+  url: vocabulary/bridge-interactive-vocabulary.yml
+- type: DataModel
+  url: data-model/bridge-interactive-data-model.yml
+- type: ErrorCatalog
+  url: errors/bridge-interactive-problem-types.yml
+- type: Conformance
+  url: conformance/bridge-interactive-conformance.yml
+- type: IntegrationEdges
+  url: integrations/bridge-interactive-integration-edges.yml
 - type: CapabilityMap
   url: capabilities/bridge-interactive-capability-edges.yml
   name: Bridge Interactive Business Capability Map
@@ -151,6 +98,226 @@ common:
   url: rate-limits/bridge-interactive-rate-limits.yml
 - type: FinOps
   url: finops/bridge-interactive-finops.yml
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+
+apis:
+- aid: bridge-interactive:bridge-interactive-agents-api
+  name: Bridge Interactive Agents API
+  description: The Agents API from Bridge Interactive — 2 operation(s) for agents.
+  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
+  baseURL: https://api.bridgedataoutput.com/api/v2
+  tags:
+  - Agents
+  properties:
+  - type: OpenAPI
+    url: openapi/bridge-interactive-agents-api-openapi.yml
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/platform/API/bridge
+  - type: APIReference
+    url: https://bridgedataoutput.com/docs/platform/API
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
+  - type: JSONSchema
+    url: json-schema/bridge-interactive-bundle-schema.json
+  - type: JSONSchema
+    url: json-schema/bridge-interactive-single-resource-schema.json
+- aid: bridge-interactive:bridge-interactive-listings-api
+  name: Bridge Interactive Listings API
+  description: The Listings API from Bridge Interactive — 2 operation(s) for listings.
+  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
+  baseURL: https://api.bridgedataoutput.com/api/v2
+  tags:
+  - Listings
+  properties:
+  - type: OpenAPI
+    url: openapi/bridge-interactive-listings-api-openapi.yml
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/platform/API/bridge
+  - type: APIReference
+    url: https://bridgedataoutput.com/docs/platform/API
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
+  - type: JSONSchema
+    url: json-schema/bridge-interactive-bundle-schema.json
+  - type: JSONSchema
+    url: json-schema/bridge-interactive-single-resource-schema.json
+- aid: bridge-interactive:bridge-interactive-offices-api
+  name: Bridge Interactive Offices API
+  description: The Offices API from Bridge Interactive — 2 operation(s) for offices.
+  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
+  baseURL: https://api.bridgedataoutput.com/api/v2
+  tags:
+  - Offices
+  properties:
+  - type: OpenAPI
+    url: openapi/bridge-interactive-offices-api-openapi.yml
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/platform/API/bridge
+  - type: APIReference
+    url: https://bridgedataoutput.com/docs/platform/API
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
+  - type: JSONSchema
+    url: json-schema/bridge-interactive-bundle-schema.json
+  - type: JSONSchema
+    url: json-schema/bridge-interactive-single-resource-schema.json
+- aid: bridge-interactive:bridge-interactive-open-houses-api
+  name: Bridge Interactive Open Houses API
+  description: The Open Houses API from Bridge Interactive — 1 operation(s) for open houses.
+  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
+  baseURL: https://api.bridgedataoutput.com/api/v2
+  tags:
+  - Open Houses
+  properties:
+  - type: OpenAPI
+    url: openapi/bridge-interactive-open-houses-api-openapi.yml
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/platform/API/bridge
+  - type: APIReference
+    url: https://bridgedataoutput.com/docs/platform/API
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
+  - type: JSONSchema
+    url: json-schema/bridge-interactive-bundle-schema.json
+- aid: bridge-interactive:bridge-interactive-reso-web-api-api
+  name: Bridge Interactive RESO Web API
+  description: The RESO Web API API from Bridge Interactive — 7 operation(s) for reso web api.
+  humanURL: https://bridgedataoutput.com/docs/platform/API/bridge
+  baseURL: https://api.bridgedataoutput.com/api/v2
+  tags:
+  - RESO Web API
+  properties:
+  - type: OpenAPI
+    url: openapi/bridge-interactive-reso-web-api-api-openapi.yml
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/platform/API/bridge
+  - type: APIReference
+    url: https://bridgedataoutput.com/docs/platform/API
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
+  - type: JSONSchema
+    url: json-schema/bridge-interactive-odata-collection-schema.json
+- aid: bridge-interactive:bridge-interactive-webhooks-api
+  name: Bridge Interactive Webhooks API
+  description: The Webhooks API from Bridge — 3 operation(s) for webhooks.
+  humanURL: https://bridgedataoutput.com/docs/platform/API/reso-web-api
+  baseURL: https://api.bridgedataoutput.com/api/v2/OData
+  tags:
+  - Webhook
+  tags_raw:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/bridge-interactive-webhooks-api-openapi.yml
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/platform/API/reso-web-api
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/explorer/mls-data
+  - type: JSONSchema
+    url: json-schema/bridge-property-schema.json
+  - type: JSONSchema
+    url: json-schema/bridge-member-schema.json
+  - type: JSONLD
+    url: json-ld/bridge-interactive-context.jsonld
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/platform/API/bridge
+  x-moved-from: bridge-mls:bridge-mls-webhooks-api (consolidated into bridge-interactive 2026-10-13, approved by Kin Lane)
+- aid: bridge-interactive:bridge-interactive-property-api
+  name: Bridge Interactive Property API
+  description: RESO Property resource (listings)
+  humanURL: https://bridgedataoutput.com/docs/platform/API/reso-web-api
+  baseURL: https://api.bridgedataoutput.com/api/v2/OData
+  tags:
+  - Property
+  properties:
+  - type: OpenAPI
+    url: openapi/bridge-interactive-property-api-openapi.yml
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/platform/API/reso-web-api
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/explorer/mls-data
+  - type: JSONSchema
+    url: json-schema/bridge-property-schema.json
+  - type: JSONSchema
+    url: json-schema/bridge-member-schema.json
+  - type: JSONLD
+    url: json-ld/bridge-interactive-context.jsonld
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/platform/API/bridge
+  x-moved-from: bridge-mls:bridge-mls-property-api (consolidated into bridge-interactive 2026-10-13, approved by Kin Lane)
+- aid: bridge-interactive:bridge-interactive-member-api
+  name: Bridge Interactive Member API
+  description: RESO Member resource (agents)
+  humanURL: https://bridgedataoutput.com/docs/platform/API/reso-web-api
+  baseURL: https://api.bridgedataoutput.com/api/v2/OData
+  tags:
+  - Member
+  properties:
+  - type: OpenAPI
+    url: openapi/bridge-interactive-member-api-openapi.yml
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/platform/API/reso-web-api
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/explorer/mls-data
+  - type: JSONSchema
+    url: json-schema/bridge-property-schema.json
+  - type: JSONSchema
+    url: json-schema/bridge-member-schema.json
+  - type: JSONLD
+    url: json-ld/bridge-interactive-context.jsonld
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/platform/API/bridge
+  x-moved-from: bridge-mls:bridge-mls-member-api (consolidated into bridge-interactive 2026-10-13, approved by Kin Lane)
+- aid: bridge-interactive:bridge-interactive-office-api
+  name: Bridge Interactive Office API
+  description: RESO Office resource (brokerages)
+  humanURL: https://bridgedataoutput.com/docs/platform/API/reso-web-api
+  baseURL: https://api.bridgedataoutput.com/api/v2/OData
+  tags:
+  - Office
+  properties:
+  - type: OpenAPI
+    url: openapi/bridge-interactive-office-api-openapi.yml
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/platform/API/reso-web-api
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/explorer/reso-web-api
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/explorer/mls-data
+  - type: JSONSchema
+    url: json-schema/bridge-property-schema.json
+  - type: JSONSchema
+    url: json-schema/bridge-member-schema.json
+  - type: JSONLD
+    url: json-ld/bridge-interactive-context.jsonld
+  - type: Documentation
+    url: https://bridgedataoutput.com/docs/platform/API/bridge
+  x-moved-from: bridge-mls:bridge-mls-office-api (consolidated into bridge-interactive 2026-10-13, approved by Kin Lane)
+- aid: bridge-interactive:bridge-interactive-zillow-group-data-api
+  name: Zillow Group Data (ZG Data) API
+  tags:
+  - Real Estate
+  - Public Records
+  - Property Data
+  - Parcel
+  tags_raw:
+  - Real Estate
+  - Public Records
+  - Property Data
+  - Parcels
+  - Real-Estate
+  humanURL: https://bridgedataoutput.com/zgdata
+  baseURL: https://api.bridgedataoutput.com/api/v2/OData
+  properties:
+  - url: https://bridgedataoutput.com/zgdata
+    type: Documentation
+  - url: https://bridgedataoutput.com/docs/explorer/zillow-group-econ-data
+    type: Documentation
+  description: Zillow Group Data feeds delivered through Bridge — parcels, assessments, transactions, and Zillow Group Econ Data (ZHVI, ZORI,
+    market metrics) — accessible via the same OData/RESO Web API surface as MLS data. Licensed separately from MLS feeds.
+  x-moved-from: bridge-mls:zillow-group-data-api (consolidated into bridge-interactive 2026-10-13, approved by Kin Lane)

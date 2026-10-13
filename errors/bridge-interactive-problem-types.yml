@@ -1,0 +1,41 @@
+generated: '2026-10-13'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/bridge-interactive-agents-api-openapi.yml
+- openapi/bridge-interactive-listings-api-openapi.yml
+- openapi/bridge-interactive-member-api-openapi.yml
+- openapi/bridge-interactive-office-api-openapi.yml
+- openapi/bridge-interactive-offices-api-openapi.yml
+- openapi/bridge-interactive-open-houses-api-openapi.yml
+- openapi/bridge-interactive-property-api-openapi.yml
+- openapi/bridge-interactive-reso-web-api-api-openapi.yml
+- openapi/bridge-interactive-webhooks-api-openapi.yml
+format: custom
+envelope:
+  media_type: application/json
+  schema: Error
+coverage:
+  operations: 26
+  statuses_declared: 3
+problems:
+- status: 401
+  title: Unauthorized
+  description: Missing or invalid access token.
+  operations: 6
+  media_types:
+  - application/json
+  schema: Error
+- status: 404
+  title: Not Found
+  description: Not found
+  operations: 1
+  media_types: []
+  schema: null
+- status: 429
+  title: Too Many Requests
+  description: Rate limit exceeded.
+  operations: 1
+  media_types:
+  - application/json
+  schema: Error
