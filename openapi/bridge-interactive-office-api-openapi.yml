@@ -65,6 +65,26 @@ paths:
                 type: object
 components:
   parameters:
+    Skip:
+      name: $skip
+      in: query
+      description: Number of records to skip.
+      schema:
+        type: integer
+    Top:
+      name: $top
+      in: query
+      description: Page size. Bridge interprets `$top` as page size (not total collection size). Default 10, max 200.
+      schema:
+        type: integer
+        default: 10
+        maximum: 200
+    Filter:
+      name: $filter
+      in: query
+      description: OData filter expression (e.g. `ListPrice gt 500000 and StandardStatus eq 'Active'`).
+      schema:
+        type: string
     OrderBy:
       name: $orderby
       in: query
@@ -77,12 +97,6 @@ components:
       description: Comma-separated list of fields to return.
       schema:
         type: string
-    Skip:
-      name: $skip
-      in: query
-      description: Number of records to skip.
-      schema:
-        type: integer
     Dataset:
       name: dataset
       in: path
@@ -90,20 +104,6 @@ components:
       description: MLS dataset code (e.g. `test`, `actris_ref`, `mlspin`).
       schema:
         type: string
-    Filter:
-      name: $filter
-      in: query
-      description: OData filter expression (e.g. `ListPrice gt 500000 and StandardStatus eq 'Active'`).
-      schema:
-        type: string
-    Top:
-      name: $top
-      in: query
-      description: Page size. Bridge interprets `$top` as page size (not total collection size). Default 10, max 200.
-      schema:
-        type: integer
-        default: 10
-        maximum: 200
   securitySchemes:
     BearerAuth:
       type: http

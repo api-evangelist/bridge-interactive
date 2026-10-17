@@ -158,18 +158,18 @@ paths:
                 $ref: '#/components/schemas/ODataCollection'
 components:
   parameters:
-    accessToken:
-      name: access_token
+    odataFilter:
+      name: $filter
       in: query
       required: false
-      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
+      description: OData filter expression (e.g. ListPrice gt 500000). Names are case sensitive.
       schema:
         type: string
-    odataExpand:
-      name: $expand
-      in: query
-      required: false
-      description: OData related resources to embed (e.g. Media, Member, Office).
+    datasetId:
+      name: dataset_id
+      in: path
+      required: true
+      description: The dataset identifier the request is scoped to.
       schema:
         type: string
     odataOrderby:
@@ -179,20 +179,6 @@ components:
       description: OData ordering expression (e.g. ListPrice desc).
       schema:
         type: string
-    odataFilter:
-      name: $filter
-      in: query
-      required: false
-      description: OData filter expression (e.g. ListPrice gt 500000). Names are case sensitive.
-      schema:
-        type: string
-    odataSkip:
-      name: $skip
-      in: query
-      required: false
-      description: OData number of records to skip.
-      schema:
-        type: integer
     odataTop:
       name: $top
       in: query
@@ -200,11 +186,11 @@ components:
       description: OData page size (v2) / collection size (v3).
       schema:
         type: integer
-    datasetId:
-      name: dataset_id
-      in: path
-      required: true
-      description: The dataset identifier the request is scoped to.
+    accessToken:
+      name: access_token
+      in: query
+      required: false
+      description: Bridge access token. Optional when an Authorization Bearer header is supplied.
       schema:
         type: string
     odataSelect:
@@ -214,14 +200,30 @@ components:
       description: Comma-separated OData field selection.
       schema:
         type: string
-  responses:
-    Unauthorized:
-      description: Missing or invalid access token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    odataSkip:
+      name: $skip
+      in: query
+      required: false
+      description: OData number of records to skip.
+      schema:
+        type: integer
+    odataExpand:
+      name: $expand
+      in: query
+      required: false
+      description: OData related resources to embed (e.g. Media, Member, Office).
+      schema:
+        type: string
   schemas:
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        status:
+          type: integer
+        message:
+          type: string
     ODataCollection:
       type: object
       description: OData collection response for RESO Web API resources.
@@ -235,15 +237,13 @@ components:
           items:
             type: object
             additionalProperties: true
-    Error:
-      type: object
-      properties:
-        success:
-          type: boolean
-        status:
-          type: integer
-        message:
-          type: string
+  responses:
+    Unauthorized:
+      description: Missing or invalid access token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     bearerAuth:
       type: http
