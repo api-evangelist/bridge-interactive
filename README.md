@@ -1,4 +1,4 @@
-# Bridge Interactive (bridge-interactive)
+# Bridge Interactive
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,155 +66,155 @@
 
 Bridge Interactive (a Zillow Group company) is a real-estate data-access platform that normalizes MLS listing data to RESO standards and serves it through the Bridge API. The Bridge Data Output platform exposes a proprietary RESTful Bridge Web API and a RESO-compliant RESO Web API (OData) for properties, members, offices, open houses, and media, all secured with a Bearer server token.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/bridge-interactive/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/bridge-interactive/refs/heads/main/apis.yml)
+**Areas:** Real Estate · MLS · RESO · Listings · Property Data
 
-## Tags
+## Bridge Interactive on APIs.io
 
-- Real Estate
-- MLS
-- RESO
-- Listings
-- Property Data
+Everything profiled for Bridge Interactive is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bridge-interactive/](https://apis.io/providers/bridge-interactive/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (10)
 
-- **Created:** 2026-06-21
-- **Modified:** 2026-06-21
+- [Bridge Interactive Agents API](https://apis.io/apis/bridge-interactive/bridge-interactive-agents-api/) — The Agents API from Bridge Interactive — 2 operation(s) for agents.
+- [Bridge Interactive Listings API](https://apis.io/apis/bridge-interactive/bridge-interactive-listings-api/) — The Listings API from Bridge Interactive — 2 operation(s) for listings.
+- [Bridge Interactive Offices API](https://apis.io/apis/bridge-interactive/bridge-interactive-offices-api/) — The Offices API from Bridge Interactive — 2 operation(s) for offices.
+- [Bridge Interactive Open Houses API](https://apis.io/apis/bridge-interactive/bridge-interactive-open-houses-api/) — The Open Houses API from Bridge Interactive — 1 operation(s) for open houses.
+- [Bridge Interactive RESO Web API](https://apis.io/apis/bridge-interactive/bridge-interactive-reso-web-api-api/) — The RESO Web API API from Bridge Interactive — 7 operation(s) for reso web api.
+- [Bridge Interactive Webhooks API](https://apis.io/apis/bridge-interactive/bridge-interactive-webhooks-api/) — The Webhooks API from Bridge — 3 operation(s) for webhooks.
+- [Bridge Interactive Property API](https://apis.io/apis/bridge-interactive/bridge-interactive-property-api/) — RESO Property resource (listings)
+- [Bridge Interactive Member API](https://apis.io/apis/bridge-interactive/bridge-interactive-member-api/) — RESO Member resource (agents)
+- [Bridge Interactive Office API](https://apis.io/apis/bridge-interactive/bridge-interactive-office-api/) — RESO Office resource (brokerages)
+- [Zillow Group Data (ZG Data) API](https://apis.io/apis/bridge-interactive/bridge-interactive-zillow-group-data-api/) — Zillow Group Data feeds delivered through Bridge — parcels, assessments, transactions, and Zillow Group Econ Data (ZHVI, ZORI, market metrics) — accessible…
 
-## APIs
+### Published properties
 
-### Bridge Listings and Properties API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Query normalized real-estate listings and property records for a dataset via the proprietary Bridge Web API, with field selection, sorting, near (geo) search, and per-field filter operators (eq, ne, gt, lt, gte, lte).
+#### MCP servers (1)
 
-- **Human URL:** [https://bridgedataoutput.com/docs/platform/API/bridge](https://bridgedataoutput.com/docs/platform/API/bridge)
-- **Base URL:** `https://api.bridgedataoutput.com/api/v2`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [bridge-interactive-mcp.yml](https://apis.io/servers/bridge-interactive/bridge-interactive-mcp-yml/)
 
-- Listings
-- Property
-- Real Estate
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://bridgedataoutput.com/docs/platform/API/bridge)
-- [API Reference](https://bridgedataoutput.com/docs/platform/API)
-- [OpenAPI](openapi/bridge-interactive-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bridge-interactive.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/bridge-interactive.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bridge Interactive Agentic Access](https://apis.io/agentic-access/bridge-interactive/bridge-interactive-agentic-access/)
 
-### Bridge Agents API
+#### JSON Schema (5)
 
-Retrieve agent (RESO Member) records for a dataset, including name, contact, license, and office association, with filtering and field selection.
+The data models the API reads and writes.
 
-- **Human URL:** [https://bridgedataoutput.com/docs/platform/API/bridge](https://bridgedataoutput.com/docs/platform/API/bridge)
-- **Base URL:** `https://api.bridgedataoutput.com/api/v2`
+- [Bundle](https://apis.io/schemas/bridge-interactive/bridge-interactive-bundle/)
+- [ODataCollection](https://apis.io/schemas/bridge-interactive/bridge-interactive-odata-collection/)
+- [SingleResource](https://apis.io/schemas/bridge-interactive/bridge-interactive-single-resource/)
+- [Bridge RESO Member](https://apis.io/schemas/bridge-interactive/bridge-member/)
+- [Bridge RESO Property](https://apis.io/schemas/bridge-interactive/bridge-property/)
 
-#### Tags
+#### JSON-LD (1)
 
-- Agents
-- Members
-- Real Estate
+Linked-data contexts for the provider's vocabulary.
 
-#### Properties
+- [Bridge Interactive Context](https://apis.io/jsonld/bridge-interactive/bridge-interactive-context/)
 
-- [Documentation](https://bridgedataoutput.com/docs/platform/API/bridge)
-- [OpenAPI](openapi/bridge-interactive-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bridge-interactive.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/bridge-interactive.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Collections (6)
 
-### Bridge Offices API
+Postman and Open Collection request collections.
 
-Retrieve brokerage office (RESO Office) records for a dataset, including office name, address, and contact, filterable by location and other fields.
+- [Bridge API (Bridge Data Output)](https://apis.io/collections/bridge-interactive/open-bridge-interactive/)
+- [Bridge API (Bridge Data Output) Agents API](https://apis.io/collections/bridge-interactive/open-bridge-interactive-agents-api/)
+- [Bridge API (Bridge Data Output) Agents Listings API](https://apis.io/collections/bridge-interactive/open-bridge-interactive-listings-api/)
+- [Bridge API (Bridge Data Output) Agents Offices API](https://apis.io/collections/bridge-interactive/open-bridge-interactive-offices-api/)
+- [Bridge API (Bridge Data Output) Agents Open Houses API](https://apis.io/collections/bridge-interactive/open-bridge-interactive-open-houses-api/)
+- [Bridge API (Bridge Data Output) Agents RESO Web API API](https://apis.io/collections/bridge-interactive/open-bridge-interactive-reso-web-api-api/)
 
-- **Human URL:** [https://bridgedataoutput.com/docs/platform/API/bridge](https://bridgedataoutput.com/docs/platform/API/bridge)
-- **Base URL:** `https://api.bridgedataoutput.com/api/v2`
+#### Governance rules (1)
 
-#### Tags
+Spectral rulesets for the provider's contracts.
 
-- Offices
-- Brokerages
-- Real Estate
+- [Bridge Interactive API Rules](https://apis.io/rules/bridge-interactive/bridge-interactive-rules/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://bridgedataoutput.com/docs/platform/API/bridge)
-- [OpenAPI](openapi/bridge-interactive-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bridge-interactive.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/bridge-interactive.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Bridge Open Houses API
+- [Bridge Interactive Authentication](https://apis.io/security/bridge-interactive/bridge-interactive-authentication/)
+- [Bridge Interactive Domain Security](https://apis.io/security/bridge-interactive/bridge-interactive-domain-security/)
 
-Retrieve scheduled open house (RESO OpenHouse) records for a dataset, including date, time window, and the associated listing.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://bridgedataoutput.com/docs/platform/API/bridge](https://bridgedataoutput.com/docs/platform/API/bridge)
-- **Base URL:** `https://api.bridgedataoutput.com/api/v2`
+Published plans, tiers and prices.
 
-#### Tags
+- [Bridge Interactive Plans Pricing](https://apis.io/plans/bridge-interactive/bridge-interactive-plans-pricing/)
 
-- Open Houses
-- Events
-- Real Estate
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://bridgedataoutput.com/docs/platform/API/bridge)
-- [OpenAPI](openapi/bridge-interactive-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bridge-interactive.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/bridge-interactive.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Bridge Interactive Rate Limits](https://apis.io/rate-limits/bridge-interactive/bridge-interactive-rate-limits/)
 
-### Bridge Media API
+#### FinOps (1)
 
-Retrieve listing media (RESO Media) records such as photos and virtual tours, available as a RESO resource and via $expand on Property.
+What the API costs to run, by operation.
 
-- **Human URL:** [https://bridgedataoutput.com/docs/explorer/reso-web-api](https://bridgedataoutput.com/docs/explorer/reso-web-api)
-- **Base URL:** `https://api.bridgedataoutput.com/api/v2`
+- [Bridge Interactive Finops](https://apis.io/finops/bridge-interactive/bridge-interactive-finops/)
 
-#### Tags
+## Where to find this API
 
-- Media
-- Photos
-- Real Estate
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Properties
-
-- [Documentation](https://bridgedataoutput.com/docs/explorer/reso-web-api)
-- [OpenAPI](openapi/bridge-interactive-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bridge-interactive.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/bridge-interactive.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Bridge RESO Web API
-
-RESO Data Dictionary-aligned OData endpoints (Property, Member, Office, OpenHouse, Media) with $filter, $select, $top, $skip, $orderby, $expand, a $metadata service document, and a replication endpoint for full extracts.
-
-- **Human URL:** [https://bridgedataoutput.com/docs/explorer/reso-web-api](https://bridgedataoutput.com/docs/explorer/reso-web-api)
-- **Base URL:** `https://api.bridgedataoutput.com/api/v2`
-
-#### Tags
-
-- RESO
-- OData
-- Web API
-
-#### Properties
-
-- [Documentation](https://bridgedataoutput.com/docs/explorer/reso-web-api)
-- [API Reference](https://bridgedataoutput.com/docs/platform/API)
-- [OpenAPI](openapi/bridge-interactive-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/bridge-interactive.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/bridge-interactive.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/bridge-interactive)
 - [Website](https://www.bridgeinteractive.com)
 - [Documentation](https://bridgedataoutput.com/docs/platform/)
-- [Plans](plans/bridge-interactive-plans-pricing.yml)
-- [Rate Limits](rate-limits/bridge-interactive-rate-limits.yml)
-- [Fin Ops](finops/bridge-interactive-finops.yml)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.5** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 59.9 |
+| Contract governance | 19.7 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 7.9 |
+
+**Agent readiness 18.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bridge-interactive/](https://apis.io/providers/bridge-interactive/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Bridge Interactive: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bridge-interactive/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
